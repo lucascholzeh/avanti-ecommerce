@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 236 298" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Ret&#195;&#162;ngulo 6049">
+<path d="M236 288C236 293.523 231.523 298 226 298H10C4.47716 298 0 293.523 0 288V10C0 4.47714 4.47716 0 10 0H226C231.523 0 236 4.47714 236 10V288Z" fill="url(#paint0_linear_0_10)"/>
+<path d="M236 288C236 293.523 231.523 298 226 298H10C4.47716 298 0 293.523 0 288V10C0 4.47714 4.47716 0 10 0H226C231.523 0 236 4.47714 236 10V288Z" fill="url(#paint1_linear_0_10)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_10" x1="284.272" y1="114.606" x2="-90.4142" y2="114.606" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0.74902"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_10" x1="284.272" y1="114.606" x2="-90.4142" y2="114.606" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0.74902"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

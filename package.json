@@ -1,0 +1,14 @@
+{
+  "name": "avanti-ecommerce",
+  "version": "1.0.0",
+  "description": "Landing page e-commerce Avanti — desafio técnico front-end (HTML5, Tailwind CSS e JavaScript vanilla)",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "author": "Lucas Hoffmann",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
