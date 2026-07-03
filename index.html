@@ -16,8 +16,287 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="dist/output.css" />
 </head>
-<body class="font-sans text-black antialiased">
-  <p class="p-4 text-primary font-bold">Setup OK — conteúdo entra no próximo bloco.</p>
+<body>
+  <header>
+    <p>Ganhe <mark>R$10,00</mark> de desconto no seu primeiro pedido. Utilize o cupom DESCONTO10</p>
+
+    <div>
+      <a href="#">
+        <img src="assets/icons/logo-avanti.svg" alt="Avanti" />
+      </a>
+
+      <form role="search" data-search-form>
+        <label for="search-input">Digite aqui o que você procura</label>
+        <input id="search-input" type="search" placeholder="Digite aqui o que você procura" autocomplete="off" data-search-input />
+        <button type="submit" aria-label="Buscar">
+          <img src="assets/icons/icon-search.svg" alt="" aria-hidden="true" />
+        </button>
+        <p data-search-feedback aria-live="polite" hidden></p>
+      </form>
+
+      <a href="#">
+        <img src="assets/icons/icon-user.svg" alt="" aria-hidden="true" />
+        <span>Olá,<br />Nome cliente!</span>
+      </a>
+
+      <a href="#" aria-label="Carrinho de compras, 2 itens">
+        <img src="assets/icons/icon-cart.svg" alt="" aria-hidden="true" />
+        <span aria-hidden="true">2</span>
+      </a>
+    </div>
+
+    <nav aria-label="Categorias de produtos">
+      <ul>
+        <li>
+          <button type="button" aria-expanded="false" aria-controls="mega-menu" data-megamenu-toggle>
+            <img src="assets/icons/icon-menu-hamburger.svg" alt="" aria-hidden="true" />
+            Todas as Categorias
+          </button>
+
+          <div id="mega-menu" hidden data-megamenu>
+            <ul>
+              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-blue.svg" alt="" aria-hidden="true" /></a></li>
+              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
+              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
+              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
+              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
+              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
+              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
+              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
+              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
+              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
+            </ul>
+
+            <ul>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+            </ul>
+
+            <ul>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+            </ul>
+
+            <ul>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+              <li><a href="#">Categoria</a></li>
+            </ul>
+
+            <a href="#">
+              <img src="assets/images/megamenu-promo.png" alt="Caneca preta Avanti sobre tábua de madeira" />
+              <p>Confira os<br />Produtos<br /><strong>Que acabaram<br />De chegar</strong></p>
+              <span>ver todos</span>
+            </a>
+          </div>
+        </li>
+        <li><a href="#">Departamento</a></li>
+        <li><a href="#">Departamento</a></li>
+        <li><a href="#">Departamento</a></li>
+        <li><a href="#">Departamento</a></li>
+        <li><a href="#">Departamento</a></li>
+        <li><a href="#">Departamento</a></li>
+        <li><a href="#">Departamento</a></li>
+        <li><a href="#">Departamento</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="hero-title">
+      <img src="assets/images/hero-supersale.png" alt="Pilha de roupas dobradas sobre uma cadeira branca" />
+      <div>
+        <h1 id="hero-title"><strong>super</strong><span>sale</span></h1>
+        <p>Itens selecionados com até</p>
+        <p>50%off</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="launches-title-1">
+      <header>
+        <h2 id="launches-title-1">Lançamentos</h2>
+        <a href="#">Ver mais</a>
+      </header>
+      <div data-carousel="lancamentos-1">
+        <div class="swiper">
+          <div class="swiper-wrapper"><!-- slides renderizados por js/carousel.js a partir de js/config.js --></div>
+        </div>
+        <button type="button" aria-label="Produtos anteriores" data-carousel-prev>
+          <img src="assets/icons/icon-arrow-prev.svg" alt="" aria-hidden="true" />
+        </button>
+        <button type="button" aria-label="Próximos produtos" data-carousel-next>
+          <img src="assets/icons/icon-arrow-next.svg" alt="" aria-hidden="true" />
+        </button>
+        <div data-carousel-pagination></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="mug-banner-title-1">
+      <img src="assets/images/banner-mug.png" alt="Caneca preta com logo Avanti" />
+      <div>
+        <h2 id="mug-banner-title-1">Lorem Ipsum</h2>
+        <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+        <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="features-title">
+      <div>
+        <h2 id="features-title">Lorem ipsum</h2>
+        <ul>
+          <li>
+            <img src="assets/icons/icon-map-pin-1.svg" alt="" aria-hidden="true" />
+            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+          </li>
+          <li>
+            <img src="assets/icons/icon-map-pin-2.svg" alt="" aria-hidden="true" />
+            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+          </li>
+          <li>
+            <img src="assets/icons/icon-map-pin-3.svg" alt="" aria-hidden="true" />
+            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+          </li>
+        </ul>
+      </div>
+      <img src="assets/images/banner-mug-board.png" alt="Caneca preta Avanti sobre tábua de madeira na cozinha" />
+    </section>
+
+    <section aria-labelledby="mug-banner-title-2">
+      <img src="assets/images/banner-mug.png" alt="Caneca preta com logo Avanti" />
+      <div>
+        <h2 id="mug-banner-title-2">Lorem Ipsum</h2>
+        <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+        <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="launches-title-2">
+      <header>
+        <h2 id="launches-title-2">Lançamentos</h2>
+        <a href="#">Ver mais</a>
+      </header>
+      <div data-carousel="lancamentos-2">
+        <div class="swiper">
+          <div class="swiper-wrapper"><!-- slides renderizados por js/carousel.js a partir de js/config.js --></div>
+        </div>
+        <button type="button" aria-label="Produtos anteriores" data-carousel-prev>
+          <img src="assets/icons/icon-arrow-prev.svg" alt="" aria-hidden="true" />
+        </button>
+        <button type="button" aria-label="Próximos produtos" data-carousel-next>
+          <img src="assets/icons/icon-arrow-next.svg" alt="" aria-hidden="true" />
+        </button>
+        <div data-carousel-pagination></div>
+      </div>
+    </section>
+
+    <section aria-label="Contato">
+      <img src="assets/images/banner-showroom.png" alt="Loja conceito Avanti com painéis azuis e letreiro luminoso" />
+      <p>Entre em contato conosco e verifique a disponibilidade para sua região!</p>
+    </section>
+
+    <section aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Cadastre-se na nossa <span>newsletter</span></h2>
+      <form>
+        <label for="newsletter-name">Digite seu nome</label>
+        <input id="newsletter-name" type="text" placeholder="Digite seu nome" autocomplete="name" />
+
+        <label for="newsletter-email">Digite seu e-mail</label>
+        <input id="newsletter-email" type="email" placeholder="Digite seu e-mail" autocomplete="email" />
+
+        <label>
+          <input type="checkbox" />
+          <span>Estou de acordo com a <a href="#">Política de Privacidade</a></span>
+        </label>
+
+        <button type="submit">Cadastrar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <div>
+        <img src="assets/icons/logo-avanti-footer.svg" alt="Avanti" />
+        <ul>
+          <li><a href="#" aria-label="Instagram"><img src="assets/icons/social-instagram.svg" alt="" aria-hidden="true" /></a></li>
+          <li><a href="#" aria-label="Facebook"><img src="assets/icons/social-facebook.svg" alt="" aria-hidden="true" /></a></li>
+          <li><a href="#" aria-label="YouTube"><img src="assets/icons/social-youtube.svg" alt="" aria-hidden="true" /></a></li>
+          <li><a href="#" aria-label="TikTok"><img src="assets/icons/social-tiktok.svg" alt="" aria-hidden="true" /></a></li>
+        </ul>
+      </div>
+
+      <section aria-label="Institucional">
+        <h2><span aria-hidden="true">&lt;h4&gt;</span> Institucional</h2>
+        <ul>
+          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Sobre Nós</a></li>
+          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Nossas Lojas</a></li>
+          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Privacidade e Segurança</a></li>
+          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Termos e Condições</a></li>
+        </ul>
+      </section>
+
+      <section aria-label="Central de ajuda">
+        <h2><span aria-hidden="true">&lt;h4&gt;</span> Central de ajuda</h2>
+        <ul>
+          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Fale Conosco</a></li>
+          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Frete e Entrega</a></li>
+          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Trocas e Devoluções</a></li>
+          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Formas de Pagamento</a></li>
+          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> FAQ</a></li>
+        </ul>
+      </section>
+
+      <section aria-label="Atendimento">
+        <h2><span aria-hidden="true">&lt;h4&gt;</span> Atendimento</h2>
+        <address>
+          <p><span aria-hidden="true">&lt;h5&gt;</span> <strong>Telefone:</strong> (00) 1234-5678</p>
+          <p><span aria-hidden="true">&lt;h5&gt;</span> <strong>E-mail:</strong> exemplo@exemplo.com.br</p>
+          <p><span aria-hidden="true">&lt;h5&gt;</span> <strong>Horário de atendimento:</strong></p>
+          <p>Segunda a Sábado: 07h00 às 23h00</p>
+          <p>Domingos e Feriados: 07h00 às 21h00</p>
+        </address>
+      </section>
+
+      <ul aria-label="Formas de pagamento">
+        <li><img src="assets/icons/pay-amex.svg" alt="American Express" /></li>
+        <li><img src="assets/icons/pay-mastercard.svg" alt="Mastercard" /></li>
+        <li><img src="assets/icons/pay-visa.svg" alt="Visa" /></li>
+        <li><img src="assets/icons/pay-hipercard.svg" alt="Hipercard" /></li>
+        <li><img src="assets/icons/pay-elo.svg" alt="Elo" /></li>
+        <li><img src="assets/icons/pay-diners.svg" alt="Diners Club" /></li>
+        <li><img src="assets/icons/pay-paypal.svg" alt="PayPal" /></li>
+        <li><img src="assets/icons/pay-pix.svg" alt="Pix" /></li>
+        <li><img src="assets/icons/pay-boleto.svg" alt="Boleto bancário" /></li>
+      </ul>
+    </div>
+
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+      <div>
+        <img src="assets/icons/seal-lets-encrypt.svg" alt="Let's Encrypt" />
+        <img src="assets/images/seal-vtex-pci.png" alt="VTEX PCI Certified" />
+        <img src="assets/icons/logo-avanti-grey.svg" alt="Avanti" />
+        <img src="assets/icons/logo-vtex.svg" alt="VTEX" />
+      </div>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="js/config.js" defer></script>
