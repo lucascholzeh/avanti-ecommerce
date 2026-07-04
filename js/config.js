@@ -13,10 +13,15 @@ const AvantiConfig = {
     }
   },
 
-  megaMenu: {
-    toggleSelector: '[data-megamenu-toggle]',
-    panelSelector: '[data-megamenu]'
-  },
+  /**
+   * Menus suspensos do cabeçalho. Cada entrada é um par botão→painel:
+   * "Todas as Categorias" abre o mega menu; cada "Departamento" abre o
+   * painel de categorias. Abrir um fecha os demais.
+   */
+  menus: [
+    { toggleSelector: '[data-megamenu-toggle]', panelSelector: '[data-megamenu]' },
+    { toggleSelector: '[data-dept-toggle]', panelSelector: '[data-dept-menu]' }
+  ],
 
   carousel: {
     sectionSelector: '[data-carousel]',
@@ -42,9 +47,7 @@ const AvantiConfig = {
       image: 'assets/images/product-tshirt.png',
       imageAlt: 'Homem vestindo camiseta branca básica',
       badgeLabel: 'Novo',
-      titlePrefix: '<h3>',
       titleText: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
-      titleSuffix: '</h3>',
       oldPrice: 'R$ 100,00',
       discountTag: '10% off',
       price: 'R$79,90',
