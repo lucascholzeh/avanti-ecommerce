@@ -15,6 +15,11 @@ const AvantiSearch = (() => {
     const input = form.querySelector(config.inputSelector);
     const feedback = form.querySelector(config.feedbackSelector);
 
+    const clearFeedback = () => {
+      feedback.textContent = '';
+      feedback.hidden = true;
+    };
+
     form.addEventListener('submit', (event) => {
       event.preventDefault();
 
@@ -23,6 +28,12 @@ const AvantiSearch = (() => {
         ? config.messages.result.replace('{termo}', term)
         : config.messages.emptyField;
       feedback.hidden = false;
+    });
+
+    // Esvaziar o campo (inclusive pelo "x" do type=search) remove a mensagem,
+    // para que a busca anterior não fique "presa" na tela depois de sair.
+    input.addEventListener('input', () => {
+      if (input.value.trim() === '') clearFeedback();
     });
   };
 
