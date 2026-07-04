@@ -51,7 +51,8 @@ npm run build   # build único minificado
 
 ## Decisões de implementação
 
-- **Fidelidade**: cores, tipografia, espaçamentos, textos e imagens seguem o Figma — inclusive as tags `<h3>`/`<h4>`/`<h5>` que aparecem como texto visível no design e o badge "Novo" do 1º card (texto na mesma cor do fundo, como no mock).
-- **Busca**: clique na lupa ou Enter exibem `Você buscou por: '{valor}'` abaixo do campo; cada busca substitui a anterior. Campo vazio mostra um aviso para digitar um termo.
-- **Carrosséis**: Swiper via CDN com setas, dots, arraste e teclado. O mock mostra 3 dots estáticos; a paginação implementada reflete as páginas reais do carrossel (em telas largas os 5 cards cabem inteiros, então há menos páginas).
+- **Fidelidade**: cores, tipografia, espaçamentos, textos e imagens seguem o Figma. As tags `<h3>`/`<h4>`/`<h5>` que apareciam no design foram interpretadas como instrução de formatação (usar o heading correto), e não como texto literal a exibir. O badge "Novo" do 1º card mantém o texto na mesma cor do fundo, como no mock.
+- **Busca**: clique na lupa ou Enter exibem `Você buscou por: '{valor}'` abaixo do campo; cada busca substitui a anterior e a mensagem é removida ao esvaziar o campo.
+- **Mega menu e departamentos**: "Todas as Categorias" abre o mega menu completo (departamentos + categorias + card promo); cada "Departamento" do topo abre o painel de categorias. Abrir um menu fecha os demais, e todos fecham com Escape ou clique fora.
+- **Carrosséis**: Swiper via CDN com setas, dots, arraste e teclado, em loop infinito — clicar avança ciclicamente pelos cards. A paginação usa bullets dinâmicos, refletindo o mock de poucos dots do Figma.
 - **Mobile**: o Figma possui apenas o frame desktop (1920px); a versão mobile é uma adaptação com as seções empilhadas abaixo de 1024px, preservando o desktop pixel a pixel.
