@@ -36,6 +36,13 @@ const AvantiConfig = {
     bulletClass: 'carousel-bullet',
     bulletActiveClass: 'carousel-bullet-active',
 
+    /**
+     * O Figma mostra 3 bolinhas: além dos 5 cards visíveis, o usuário pode
+     * rolar mais 3 posições (1 card por clique) antes de o loop reiniciar.
+     * A paginação reflete essas 3 posições, não a contagem de slides.
+     */
+    scrollPositions: 3,
+
     a11yMessages: {
       prevSlide: 'Produtos anteriores',
       nextSlide: 'Próximos produtos',
@@ -47,7 +54,9 @@ const AvantiConfig = {
       image: 'assets/images/product-tshirt.png',
       imageAlt: 'Homem vestindo camiseta branca básica',
       badgeLabel: 'Novo',
+      titlePrefix: '<h3>',
       titleText: 'Lorem ipsum dolor sit amet consectetuer adipiscing elit',
+      titleSuffix: '</h3>',
       oldPrice: 'R$ 100,00',
       discountTag: '10% off',
       price: 'R$79,90',

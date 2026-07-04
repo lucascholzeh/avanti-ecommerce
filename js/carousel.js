@@ -21,7 +21,11 @@ const AvantiCarousel = (() => {
         <img src="${product.image}" alt="${product.imageAlt}" class="absolute left-[8px] top-[6px] h-[222px] w-[222px] object-cover" />
         <span class="absolute left-[8px] top-[7px] rounded-[4px] px-[5px] text-[10px] font-bold uppercase leading-[22px] ${BADGE_VARIANT_CLASSES[badgeVariant]}">${product.badgeLabel}</span>
 
-        <h3 class="absolute left-[8px] right-[8px] top-[244px] text-[14px] font-normal capitalize leading-[normal] text-grey-darkest">${product.titleText}</h3>
+        <h3 class="absolute left-[8px] right-[8px] top-[244px] font-normal capitalize leading-[normal]">
+          <span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">${product.titlePrefix.replace('<', '&lt;').replace('>', '&gt;')}</span>
+          <span class="text-[14px] text-grey-darkest">${product.titleText}</span>
+          <span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">${product.titleSuffix.replace('<', '&lt;').replace('>', '&gt;')}</span>
+        </h3>
 
         <s class="absolute left-[8px] top-[287px] text-[12px] leading-[normal] text-grey-darkest">${product.oldPrice}</s>
         <span class="absolute left-[80px] top-[295px] rounded-[4px] bg-tag-teal px-[8px] py-[4px] text-[11px] font-bold uppercase leading-[12px] text-white underline">${product.discountTag}</span>
@@ -42,10 +46,11 @@ const AvantiCarousel = (() => {
     const instance = config.instances.find((item) => item.id === instanceId);
     if (!instance) return;
 
-    // No frame de 1920px os 5 cards cabem exatos no container, então não haveria
-    // overflow para rolar. Repetimos a sequência (os cards são idênticos no Figma)
-    // para que o loop tenha conteúdo real a girar em qualquer largura de tela.
-    const variants = [...instance.badgeVariants, ...instance.badgeVariants];
+    // Além dos cards visíveis, o Figma prevê algumas posições extras de rolagem
+    // (scrollPositions). Acrescentamos esses cards ao final para haver conteúdo
+    // real a girar; como os cards são idênticos, repetimos o badge padrão.
+    const extra = Array(config.scrollPositions).fill('navy');
+    const variants = [...instance.badgeVariants, ...extra];
     const wrapper = section.querySelector(config.wrapperSelector);
     wrapper.innerHTML = variants
       .map((variant) => buildSlideHtml(config.product, variant))
@@ -53,7 +58,9 @@ const AvantiCarousel = (() => {
   };
 
   /**
-   * Cria a instância Swiper de um carrossel com setas, dots, swipe e teclado.
+   * Cria a instância Swiper de um carrossel com swipe, teclado e loop.
+   * As setas e a paginação são controladas à parte (setupNavigation) para
+   * navegar de forma circular pelas N posições fixas do Figma.
    * @param {Element} section Elemento com [data-carousel].
    * @param {Object} config Configuração global (AvantiConfig.carousel).
    * @returns {Swiper} Instância criada.
@@ -66,31 +73,66 @@ const AvantiCarousel = (() => {
       watchOverflow: false,
       grabCursor: true,
       keyboard: { enabled: true, onlyInViewport: true },
-      navigation: {
-        prevEl: section.querySelector(config.prevSelector),
-        nextEl: section.querySelector(config.nextSelector)
-      },
-      pagination: {
-        el: section.querySelector(config.paginationSelector),
-        clickable: true,
-        dynamicBullets: true,
-        dynamicMainBullets: 3,
-        bulletClass: config.bulletClass,
-        bulletActiveClass: config.bulletActiveClass
-      },
       a11y: {
         prevSlideMessage: config.a11yMessages.prevSlide,
-        nextSlideMessage: config.a11yMessages.nextSlide,
-        paginationBulletMessage: config.a11yMessages.paginationBullet
+        nextSlideMessage: config.a11yMessages.nextSlide
       }
     });
+  };
+
+  /**
+   * Liga setas e bolinhas a um índice de posição 0..N-1 com wrap circular:
+   * ir além da última volta à primeira e vice-versa (a seta esquerda no
+   * início leva à última bolinha), como o Figma indica com as 3 bolinhas.
+   * @param {Element} section Elemento com [data-carousel].
+   * @param {Swiper} swiper Instância do Swiper.
+   * @param {Object} config Configuração global (AvantiConfig.carousel).
+   */
+  const setupNavigation = (section, swiper, config) => {
+    const container = section.querySelector(config.paginationSelector);
+    const total = config.scrollPositions;
+    let position = 0;
+
+    const bullets = Array.from({ length: total }, (_, index) => {
+      const bullet = document.createElement('button');
+      bullet.type = 'button';
+      bullet.className = config.bulletClass;
+      bullet.setAttribute('aria-label', config.a11yMessages.paginationBullet.replace('{{index}}', index + 1));
+      bullet.addEventListener('click', () => goTo(index));
+      container.appendChild(bullet);
+      return bullet;
+    });
+
+    const render = () => {
+      bullets.forEach((bullet, index) => {
+        bullet.classList.toggle(config.bulletActiveClass, index === position);
+      });
+    };
+
+    function goTo(index) {
+      position = ((index % total) + total) % total;
+      swiper.slideToLoop(position);
+      render();
+    }
+
+    section.querySelector(config.prevSelector).addEventListener('click', () => goTo(position - 1));
+    section.querySelector(config.nextSelector).addEventListener('click', () => goTo(position + 1));
+
+    // Mantém a bolinha certa quando o usuário arrasta ou usa o teclado.
+    swiper.on('slideChange', () => {
+      position = swiper.realIndex % total;
+      render();
+    });
+
+    render();
   };
 
   /** Inicializa todos os carrosséis da página. */
   const init = (config) => {
     document.querySelectorAll(config.sectionSelector).forEach((section) => {
       renderSlides(section, config);
-      createSwiper(section, config);
+      const swiper = createSwiper(section, config);
+      setupNavigation(section, swiper, config);
     });
   };
 
