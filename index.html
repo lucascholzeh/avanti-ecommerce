@@ -18,20 +18,20 @@
 </head>
 <body class="bg-white font-sans text-black antialiased">
   <header class="relative z-20">
-    <p class="flex h-[30px] items-center justify-center border border-black bg-primary text-[14px] font-bold leading-[22px] text-white">
+    <p class="flex min-h-[30px] flex-wrap items-center justify-center px-[8px] py-[4px] text-center border border-black bg-primary text-[12px] font-bold leading-[18px] text-white lg:py-0 lg:text-[14px] lg:leading-[22px]">
       Ganhe&nbsp;
       <mark class="rounded-[4px] bg-coupon-purple px-[4px] text-white">R$10,00</mark>
       &nbsp;de desconto no seu primeiro pedido. Utilize o cupom DESCONTO10
     </p>
 
     <div class="bg-white shadow-header">
-      <div class="mx-auto max-w-[1260px] pb-[18px] pt-[16px]">
-        <div class="flex h-[40px] items-center">
+      <div class="mx-auto max-w-[1260px] px-[16px] pb-[18px] pt-[16px] min-[1300px]:px-0">
+        <div class="flex flex-wrap items-center lg:h-[40px] lg:flex-nowrap">
           <a href="#" class="shrink-0">
             <img src="assets/icons/logo-avanti.svg" alt="Avanti" class="h-[27px] w-[153px]" />
           </a>
 
-          <form role="search" class="relative ml-[66px] w-[596px]" data-search-form>
+          <form role="search" class="relative order-last mt-[12px] w-full lg:order-none lg:ml-[66px] lg:mt-0 lg:w-[596px]" data-search-form>
             <label for="search-input" class="sr-only">Digite aqui o que você procura</label>
             <input
               id="search-input"
@@ -44,7 +44,7 @@
             <button type="submit" aria-label="Buscar" class="absolute right-[20px] top-1/2 -translate-y-1/2">
               <img src="assets/icons/icon-search.svg" alt="" aria-hidden="true" class="h-[19px] w-[19px]" />
             </button>
-            <p data-search-feedback aria-live="polite" hidden class="absolute left-[24px] top-full mt-[6px] text-[14px] text-grey-darkest"></p>
+            <p data-search-feedback aria-live="polite" hidden class="mt-[6px] pl-[24px] text-[14px] text-grey-darkest lg:absolute lg:left-[24px] lg:top-full lg:mt-[6px] lg:pl-0"></p>
           </form>
 
           <a href="#" class="ml-auto flex items-center gap-[8px]">
@@ -59,9 +59,9 @@
         </div>
 
         <nav aria-label="Categorias de produtos" class="relative mt-[22px]">
-          <ul class="flex items-start gap-[45px]">
+          <ul class="flex items-start gap-[24px] overflow-x-auto whitespace-nowrap pb-[4px] lg:gap-[45px] lg:overflow-visible lg:whitespace-normal lg:pb-0">
             <li>
-              <button type="button" aria-expanded="false" aria-controls="mega-menu" data-megamenu-toggle class="flex items-center gap-[8px] text-[14px] font-bold leading-[22px]">
+              <button type="button" aria-expanded="false" aria-controls="mega-menu" data-megamenu-toggle class="flex items-center gap-[8px] whitespace-nowrap text-[14px] font-bold leading-[22px]">
                 <img src="assets/icons/icon-menu-hamburger.svg" alt="" aria-hidden="true" class="h-[10px] w-[14px]" />
                 Todas as Categorias
               </button>
@@ -76,11 +76,11 @@
             <li><a href="#" class="text-[14px] leading-[22px]">Departamento</a></li>
           </ul>
 
-          <div id="mega-menu" hidden data-megamenu class="absolute left-0 top-[calc(100%+20px)] z-30 h-[329px] w-[1261px] bg-white shadow-megamenu">
-            <div class="absolute left-0 top-0 h-full w-[234px] bg-grey-light/[0.57]"></div>
-            <img src="assets/icons/megamenu-divider.svg" alt="" aria-hidden="true" class="absolute left-[221px] top-[20px] h-[298px]" />
+          <div id="mega-menu" hidden data-megamenu class="absolute left-0 top-[calc(100%+20px)] z-30 w-full bg-white shadow-megamenu lg:h-[329px] lg:max-w-[1261px]">
+            <div class="absolute left-0 top-0 hidden h-full w-[234px] bg-grey-light/[0.57] lg:block"></div>
+            <img src="assets/icons/megamenu-divider.svg" alt="" aria-hidden="true" class="absolute left-[221px] top-[20px] hidden h-[298px] lg:block" />
 
-            <ul class="absolute left-[16px] top-[20px] flex w-[190px] flex-col gap-[12px]">
+            <ul class="flex flex-col gap-[12px] p-[16px] lg:absolute lg:left-[16px] lg:top-[20px] lg:w-[190px] lg:p-0">
               <li><a href="#" class="flex items-center justify-between text-[14px] font-bold leading-[normal] text-primary">Departamento <img src="assets/icons/icon-chevron-blue.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
               <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
               <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
@@ -93,7 +93,7 @@
               <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
             </ul>
 
-            <ul class="absolute left-[268px] top-[18px] flex flex-col gap-[12px]">
+            <ul class="absolute left-[268px] top-[18px] hidden flex-col gap-[12px] lg:flex">
               <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
@@ -104,7 +104,7 @@
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
             </ul>
 
-            <ul class="absolute left-[458px] top-[18px] flex flex-col gap-[12px]">
+            <ul class="absolute left-[458px] top-[18px] hidden flex-col gap-[12px] lg:flex">
               <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
@@ -115,7 +115,7 @@
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
             </ul>
 
-            <ul class="absolute left-[648px] top-[18px] flex flex-col gap-[12px]">
+            <ul class="absolute left-[648px] top-[18px] hidden flex-col gap-[12px] lg:flex">
               <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
@@ -126,7 +126,7 @@
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
             </ul>
 
-            <a href="#" class="absolute left-[1001px] top-[20px] block h-[298px] w-[236px] overflow-hidden rounded-[10px]">
+            <a href="#" class="absolute left-[1001px] top-[20px] hidden h-[298px] w-[236px] overflow-hidden rounded-[10px] lg:block">
               <img src="assets/images/megamenu-promo.png" alt="Caneca preta Avanti sobre tábua de madeira" class="absolute inset-0 h-full w-full object-cover" />
               <img src="assets/icons/megamenu-promo-overlay.svg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full" />
               <p class="absolute left-[27px] top-[44px] text-[24px] leading-[27px] text-white">Confira os<br />Produtos<br /><strong class="font-bold">Que acabaram<br />De chegar</strong></p>
@@ -143,19 +143,19 @@
 
   <main>
     <section aria-labelledby="hero-title" class="bg-hero-grey">
-      <div class="mx-auto flex h-[510px] max-w-[1920px] items-center gap-[87px] pl-[305px]">
-        <img src="assets/images/hero-supersale.png" alt="Pilha de roupas dobradas sobre uma cadeira branca" class="h-[510px] w-[685px] shrink-0 object-cover mix-blend-darken" />
-        <div class="flex w-[576px] flex-col items-center gap-[12px]">
-          <h1 id="hero-title" class="font-nunito text-[100px] uppercase leading-[normal] text-black">
+      <div class="mx-auto flex max-w-[1920px] flex-col items-center lg:h-[510px] lg:flex-row lg:justify-center lg:gap-[87px] min-[1920px]:justify-start min-[1920px]:pl-[305px]">
+        <img src="assets/images/hero-supersale.png" alt="Pilha de roupas dobradas sobre uma cadeira branca" class="h-auto w-full max-w-[685px] shrink-0 object-cover mix-blend-darken lg:h-[510px] lg:w-[685px]" />
+        <div class="flex w-full flex-col items-center gap-[12px] px-[24px] py-[40px] lg:w-[576px] lg:px-0 lg:py-0">
+          <h1 id="hero-title" class="font-nunito text-[56px] uppercase leading-[normal] text-black lg:text-[100px]">
             <strong class="font-bold">super</strong><span class="font-light">sale</span>
           </h1>
-          <p class="font-nunito text-[25px] font-bold uppercase leading-[normal] tracking-[7.5px] text-primary">Itens selecionados com até</p>
-          <p class="font-nunito text-[60px] font-bold uppercase leading-[normal] text-primary">50%off</p>
+          <p class="text-center font-nunito text-[16px] font-bold uppercase leading-[normal] tracking-[4.8px] text-primary lg:text-[25px] lg:tracking-[7.5px]">Itens selecionados com até</p>
+          <p class="font-nunito text-[36px] font-bold uppercase leading-[normal] text-primary lg:text-[60px]">50%off</p>
         </div>
       </div>
     </section>
 
-    <section aria-labelledby="launches-title-1" class="mx-auto mt-[97px] max-w-[1260px]">
+    <section aria-labelledby="launches-title-1" class="mx-auto mt-[48px] max-w-[1260px] px-[16px] lg:mt-[97px] min-[1300px]:px-0">
       <header class="flex items-center justify-between">
         <h2 id="launches-title-1" class="text-[20px] font-bold leading-[27px]">Lançamentos</h2>
         <a href="#" class="text-[14px] font-bold leading-[20px] text-grey-darkest">Ver mais</a>
@@ -164,72 +164,72 @@
         <div class="swiper">
           <ul class="swiper-wrapper"><!-- slides renderizados por js/carousel.js a partir de js/config.js --></ul>
         </div>
-        <button type="button" aria-label="Produtos anteriores" data-carousel-prev class="absolute left-[-15px] top-[208px] z-10 h-[30px] w-[30px]">
+        <button type="button" aria-label="Produtos anteriores" data-carousel-prev class="absolute left-0 top-[208px] z-10 h-[30px] w-[30px] lg:left-[-15px]">
           <img src="assets/icons/icon-arrow-prev.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none -translate-x-[4px] -translate-y-[1px]" />
         </button>
-        <button type="button" aria-label="Próximos produtos" data-carousel-next class="absolute right-[-15px] top-[208px] z-10 h-[30px] w-[30px]">
+        <button type="button" aria-label="Próximos produtos" data-carousel-next class="absolute right-0 top-[208px] z-10 h-[30px] w-[30px] lg:right-[-15px]">
           <img src="assets/icons/icon-arrow-next.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none -translate-x-[4px] -translate-y-[1px]" />
         </button>
         <div data-carousel-pagination class="mt-[16px] flex h-[7px] items-center justify-center gap-[7px]"></div>
       </div>
     </section>
 
-    <section aria-labelledby="mug-banner-title-1" class="mx-auto mt-[51px] flex max-w-[1260px] gap-[37px] pl-[46px]">
-      <div class="relative h-[747px] w-[653px] shrink-0 bg-photo-grey">
-        <div class="absolute left-[33px] top-[78px] flex h-[592px] w-[588px] items-center justify-center">
-          <div class="relative h-[528px] w-[523px] -rotate-[7.54deg] overflow-hidden">
+    <section aria-labelledby="mug-banner-title-1" class="mx-auto mt-[32px] flex max-w-[1260px] flex-col gap-[24px] px-[16px] lg:mt-[51px] lg:flex-row lg:gap-[37px] lg:px-0 lg:pl-[46px]">
+      <div class="relative aspect-[653/747] w-full shrink-0 bg-photo-grey lg:h-[747px] lg:w-[653px]">
+        <div class="absolute left-[5.054%] top-[10.442%] flex h-[79.25%] w-[90.046%] items-center justify-center">
+          <div class="relative h-[89.189%] w-[88.946%] -rotate-[7.54deg] overflow-hidden">
             <img src="assets/images/banner-mug.png" alt="Caneca preta com logo Avanti" class="absolute left-[-15.88%] top-[-4.93%] h-[109.85%] w-[121.1%] max-w-none" />
           </div>
         </div>
       </div>
-      <div class="flex w-[487px] flex-col gap-[22px] pt-[105px]">
+      <div class="flex w-full flex-col gap-[22px] lg:w-[487px] lg:pt-[105px]">
         <h2 id="mug-banner-title-1" class="font-nunito text-[30px] font-bold uppercase leading-[1.4] tracking-[1.2px]">Lorem Ipsum</h2>
         <p class="font-nunito text-[18px] leading-[1.4] tracking-[0.9px]">Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
         <p class="font-nunito text-[18px] leading-[1.4] tracking-[0.9px]">Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
       </div>
     </section>
 
-    <section aria-labelledby="features-title" class="relative mt-[76px] bg-band-grey">
-      <div class="mx-auto flex h-[825px] max-w-[1260px] gap-[49px] pl-[47px]">
-        <div class="mt-[142px] w-[476px] shrink-0">
+    <section aria-labelledby="features-title" class="relative mt-[48px] bg-band-grey lg:mt-[76px]">
+      <div class="mx-auto flex max-w-[1260px] flex-col gap-[32px] px-[16px] py-[48px] lg:h-[825px] lg:flex-row lg:gap-[49px] lg:px-0 lg:py-0 lg:pl-[47px]">
+        <div class="w-full shrink-0 lg:mt-[142px] lg:w-[476px]">
           <h2 id="features-title" class="text-center font-nunito text-[30px] font-bold uppercase leading-[1.4] tracking-[1.2px] text-band-text">Lorem ipsum</h2>
-          <ul class="mt-[50px] flex flex-col gap-[50px]">
+          <ul class="mt-[32px] flex flex-col gap-[32px] lg:mt-[50px] lg:gap-[50px]">
             <li class="flex items-start gap-[23px]">
               <img src="assets/icons/icon-map-pin-1.svg" alt="" aria-hidden="true" class="mt-[12px] h-[90px] w-[90px] shrink-0" />
-              <p class="w-[360px] font-nunito text-[18px] leading-[1.4] tracking-[0.9px] text-band-text">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+              <p class="w-full font-nunito text-[18px] leading-[1.4] tracking-[0.9px] text-band-text lg:w-[360px]">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
             </li>
             <li class="flex items-start gap-[23px]">
               <img src="assets/icons/icon-map-pin-2.svg" alt="" aria-hidden="true" class="mt-[12px] h-[90px] w-[90px] shrink-0" />
-              <p class="w-[360px] font-nunito text-[18px] leading-[1.4] tracking-[0.9px] text-band-text">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+              <p class="w-full font-nunito text-[18px] leading-[1.4] tracking-[0.9px] text-band-text lg:w-[360px]">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
             </li>
             <li class="flex items-start gap-[23px]">
               <img src="assets/icons/icon-map-pin-3.svg" alt="" aria-hidden="true" class="mt-[12px] h-[90px] w-[90px] shrink-0" />
-              <p class="w-[360px] font-nunito text-[18px] leading-[1.4] tracking-[0.9px] text-band-text">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+              <p class="w-full font-nunito text-[18px] leading-[1.4] tracking-[0.9px] text-band-text lg:w-[360px]">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
             </li>
           </ul>
         </div>
-        <div class="relative mt-[97px] h-[728px] w-[652px] shrink-0 overflow-hidden">
+        <div class="relative aspect-[652/728] w-full shrink-0 overflow-hidden lg:mt-[97px] lg:h-[728px] lg:w-[652px]">
           <img src="assets/images/banner-mug-board.png" alt="Caneca preta Avanti sobre tábua de madeira na cozinha" class="absolute left-[-5.84%] top-0 h-full w-[111.68%] max-w-none object-cover" />
         </div>
       </div>
     </section>
 
-    <section aria-labelledby="mug-banner-title-2" class="mx-auto mt-[65px] flex max-w-[1260px] gap-[37px] pl-[46px]">
-      <div class="relative h-[747px] w-[653px] shrink-0 bg-photo-grey">
-        <div class="absolute left-[33px] top-[78px] flex h-[592px] w-[588px] items-center justify-center">
-          <div class="relative h-[528px] w-[523px] -rotate-[7.54deg] overflow-hidden">
+    <section aria-labelledby="mug-banner-title-2" class="mx-auto mt-[48px] flex max-w-[1260px] flex-col gap-[24px] px-[16px] lg:mt-[65px] lg:flex-row lg:gap-[37px] lg:px-0 lg:pl-[46px]">
+      <div class="relative aspect-[653/747] w-full shrink-0 bg-photo-grey lg:h-[747px] lg:w-[653px]">
+        <div class="absolute left-[5.054%] top-[10.442%] flex h-[79.25%] w-[90.046%] items-center justify-center">
+          <div class="relative h-[89.189%] w-[88.946%] -rotate-[7.54deg] overflow-hidden">
             <img src="assets/images/banner-mug.png" alt="Caneca preta com logo Avanti" class="absolute left-[-15.88%] top-[-4.93%] h-[109.85%] w-[121.1%] max-w-none" />
           </div>
         </div>
       </div>
-      <div class="flex w-[487px] flex-col gap-[22px] pt-[105px]">
+      <div class="flex w-full flex-col gap-[22px] lg:w-[487px] lg:pt-[105px]">
         <h2 id="mug-banner-title-2" class="font-nunito text-[30px] font-bold uppercase leading-[1.4] tracking-[1.2px]">Lorem Ipsum</h2>
         <p class="font-nunito text-[18px] leading-[1.4] tracking-[0.9px]">Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
         <p class="font-nunito text-[18px] leading-[1.4] tracking-[0.9px]">Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
       </div>
     </section>
 
-    <section aria-labelledby="launches-title-2" class="mx-auto mt-[64px] max-w-[1260px]">
+    <section aria-labelledby="launches-title-2" class="mx-auto mt-[48px] max-w-[1260px] px-[16px] lg:mt-[64px] min-[1300px]:px-0">
       <header class="flex items-center justify-between">
         <h2 id="launches-title-2" class="text-[20px] font-bold leading-[27px]">Lançamentos</h2>
         <a href="#" class="text-[14px] font-bold leading-[20px] text-grey-darkest">Ver mais</a>
@@ -238,45 +238,45 @@
         <div class="swiper">
           <ul class="swiper-wrapper"><!-- slides renderizados por js/carousel.js a partir de js/config.js --></ul>
         </div>
-        <button type="button" aria-label="Produtos anteriores" data-carousel-prev class="absolute left-[-15px] top-[208px] z-10 h-[30px] w-[30px]">
+        <button type="button" aria-label="Produtos anteriores" data-carousel-prev class="absolute left-0 top-[208px] z-10 h-[30px] w-[30px] lg:left-[-15px]">
           <img src="assets/icons/icon-arrow-prev.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none -translate-x-[4px] -translate-y-[1px]" />
         </button>
-        <button type="button" aria-label="Próximos produtos" data-carousel-next class="absolute right-[-15px] top-[208px] z-10 h-[30px] w-[30px]">
+        <button type="button" aria-label="Próximos produtos" data-carousel-next class="absolute right-0 top-[208px] z-10 h-[30px] w-[30px] lg:right-[-15px]">
           <img src="assets/icons/icon-arrow-next.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none -translate-x-[4px] -translate-y-[1px]" />
         </button>
         <div data-carousel-pagination class="mt-[16px] flex h-[7px] items-center justify-center gap-[7px]"></div>
       </div>
     </section>
 
-    <section aria-label="Contato" class="relative mt-[68px] h-[660px] overflow-hidden">
+    <section aria-label="Contato" class="relative mt-[48px] h-[400px] overflow-hidden lg:mt-[68px] lg:h-[660px]">
       <img src="assets/images/banner-showroom.png" alt="Loja conceito Avanti com painéis azuis e letreiro luminoso" class="absolute inset-0 h-full w-full object-cover blur-[2px]" />
-      <p class="absolute top-[264px] flex h-[132px] w-full items-center justify-center bg-primary text-center font-nunito text-[30px] leading-[1.4] text-white">Entre em contato conosco e verifique a disponibilidade para sua região!</p>
+      <p class="absolute top-1/2 flex min-h-[92px] w-full -translate-y-1/2 items-center justify-center bg-primary px-[24px] text-center font-nunito text-[18px] leading-[1.4] text-white lg:min-h-[132px] lg:text-[30px]">Entre em contato conosco e verifique a disponibilidade para sua região!</p>
     </section>
 
-    <section aria-labelledby="newsletter-title" class="mx-auto mt-[67px] max-w-[1260px]">
+    <section aria-labelledby="newsletter-title" class="mx-auto mt-[48px] max-w-[1260px] px-[16px] lg:mt-[67px] min-[1300px]:px-0">
       <h2 id="newsletter-title" class="text-center text-[20px] font-bold leading-[27px]">Cadastre-se na nossa <span class="text-primary">newsletter</span></h2>
-      <form class="mt-[24px] flex h-[176px] items-center gap-[24px] rounded-[8px] bg-band-grey pl-[114px]">
+      <form class="mt-[24px] flex flex-col gap-[16px] rounded-[8px] bg-band-grey p-[24px] lg:h-[176px] lg:flex-row lg:items-center lg:gap-[24px] lg:p-0 lg:pl-[114px]">
         <div>
           <label for="newsletter-name" class="sr-only">Digite seu nome</label>
-          <input id="newsletter-name" type="text" placeholder="Digite seu nome" autocomplete="name" class="h-[48px] w-[280px] rounded-[8px] bg-white pl-[24px] text-[14px] text-grey-darkest outline-none placeholder:text-grey-darkest" />
+          <input id="newsletter-name" type="text" placeholder="Digite seu nome" autocomplete="name" class="h-[48px] w-full rounded-[8px] bg-white pl-[24px] text-[14px] text-grey-darkest outline-none placeholder:text-grey-darkest lg:w-[280px]" />
         </div>
         <div>
           <label for="newsletter-email" class="sr-only">Digite seu e-mail</label>
-          <input id="newsletter-email" type="email" placeholder="Digite seu e-mail" autocomplete="email" class="h-[48px] w-[280px] rounded-[8px] bg-white pl-[24px] text-[14px] text-grey-darkest outline-none placeholder:text-grey-darkest" />
+          <input id="newsletter-email" type="email" placeholder="Digite seu e-mail" autocomplete="email" class="h-[48px] w-full rounded-[8px] bg-white pl-[24px] text-[14px] text-grey-darkest outline-none placeholder:text-grey-darkest lg:w-[280px]" />
         </div>
         <label class="flex items-center gap-[8px]">
           <input type="checkbox" class="h-[16px] w-[16px] shrink-0 appearance-none rounded-[4px] border border-grey-medium bg-white checked:border-primary checked:bg-primary" />
           <span class="text-[12px] font-bold text-grey-dark">Estou de acordo com a <a href="#" class="underline">Política de Privacidade</a></span>
         </label>
-        <button type="submit" class="flex items-center justify-center rounded-[8px] bg-primary px-[24px] py-[14px] text-[16px] font-bold leading-[20px] text-white transition-opacity hover:opacity-90">Cadastrar</button>
+        <button type="submit" class="flex items-center justify-center rounded-[8px] bg-primary px-[24px] py-[14px] text-[16px] font-bold leading-[20px] text-white transition-opacity hover:opacity-90 lg:w-auto">Cadastrar</button>
       </form>
     </section>
   </main>
 
-  <footer class="mt-[79px]">
+  <footer class="mt-[48px] lg:mt-[79px]">
     <div class="bg-grey-light">
-      <div class="relative mx-auto h-[386px] max-w-[1920px]">
-        <div class="absolute left-[396px] top-[64px] flex flex-col gap-[40px]">
+      <div class="relative mx-auto flex max-w-[1920px] flex-col gap-[32px] px-[24px] py-[40px] lg:block lg:h-[386px] lg:p-0">
+        <div class="flex flex-col gap-[40px] lg:absolute lg:left-[396px] lg:top-[64px]">
           <img src="assets/icons/logo-avanti-footer.svg" alt="Avanti" class="h-[27px] w-[152px]" />
           <ul class="flex h-[26px] items-center gap-[40px]">
             <li><a href="#" aria-label="Instagram"><img src="assets/icons/social-instagram.svg" alt="" aria-hidden="true" class="h-[19px] w-[19px]" /></a></li>
@@ -286,7 +286,7 @@
           </ul>
         </div>
 
-        <section aria-label="Institucional" class="absolute left-[732px] top-[64px]">
+        <section aria-label="Institucional" class="lg:absolute lg:left-[732px] lg:top-[64px]">
           <h2 class="text-[14px] font-bold text-black"><span aria-hidden="true" class="text-[12px] text-grey-dark">&lt;h4&gt;</span> Institucional</h2>
           <ul class="mt-[11px]">
             <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Sobre Nós</a></li>
@@ -296,7 +296,7 @@
           </ul>
         </section>
 
-        <section aria-label="Central de ajuda" class="absolute left-[1028px] top-[64px]">
+        <section aria-label="Central de ajuda" class="lg:absolute lg:left-[1028px] lg:top-[64px]">
           <h2 class="text-[14px] font-bold text-black"><span aria-hidden="true" class="text-[12px] text-grey-dark">&lt;h4&gt;</span> Central de ajuda</h2>
           <ul class="mt-[11px]">
             <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Fale Conosco</a></li>
@@ -307,7 +307,7 @@
           </ul>
         </section>
 
-        <section aria-label="Atendimento" class="absolute left-[1312px] top-[64px]">
+        <section aria-label="Atendimento" class="lg:absolute lg:left-[1312px] lg:top-[64px]">
           <h2 class="text-[14px] font-bold text-black"><span aria-hidden="true" class="text-[12px] text-grey-dark">&lt;h4&gt;</span> Atendimento</h2>
           <address class="mt-[11px] not-italic">
             <p class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> <strong class="font-bold">Telefone:</strong> (00) 1234-5678</p>
@@ -318,7 +318,7 @@
           </address>
         </section>
 
-        <ul aria-label="Formas de pagamento" class="absolute left-1/2 top-[298px] flex -translate-x-1/2 items-center gap-[34px]">
+        <ul aria-label="Formas de pagamento" class="flex flex-wrap items-center justify-center gap-[20px] lg:absolute lg:left-1/2 lg:top-[298px] lg:-translate-x-1/2 lg:flex-nowrap lg:gap-[34px]">
           <li><img src="assets/icons/pay-amex.svg" alt="American Express" class="w-[27px]" /></li>
           <li><img src="assets/icons/pay-mastercard.svg" alt="Mastercard" class="w-[26px]" /></li>
           <li><img src="assets/icons/pay-visa.svg" alt="Visa" class="w-[36px]" /></li>
@@ -333,8 +333,8 @@
     </div>
 
     <div class="bg-white pb-[16px]">
-      <p class="mx-auto max-w-[1074px] pt-[40px] text-center text-[12px] leading-[20px] text-grey-darkest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-      <div class="mt-[40px] flex items-center justify-center gap-[24px]">
+      <p class="mx-auto max-w-[1074px] px-[24px] pt-[40px] text-center text-[12px] leading-[20px] text-grey-darkest min-[1122px]:px-0">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+      <div class="mt-[40px] flex flex-wrap items-center justify-center gap-[24px] px-[16px] lg:px-0">
         <img src="assets/icons/seal-lets-encrypt.svg" alt="Let's Encrypt" class="h-[30px] w-[39px]" />
         <img src="assets/images/seal-vtex-pci.png" alt="VTEX PCI Certified" class="h-[32px] w-[51px]" />
         <span aria-hidden="true" class="h-[15px] w-px bg-grey-medium"></span>
