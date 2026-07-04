@@ -20,10 +20,22 @@ const AvantiConfig = {
 
   carousel: {
     sectionSelector: '[data-carousel]',
+    swiperSelector: '.swiper',
     wrapperSelector: '.swiper-wrapper',
     prevSelector: '[data-carousel-prev]',
     nextSelector: '[data-carousel-next]',
     paginationSelector: '[data-carousel-pagination]',
+
+    /** Espaço entre cards: (1260px do container − 5 × 238px de card) ÷ 4 vãos. */
+    slideGap: 17.5,
+    bulletClass: 'carousel-bullet',
+    bulletActiveClass: 'carousel-bullet-active',
+
+    a11yMessages: {
+      prevSlide: 'Produtos anteriores',
+      nextSlide: 'Próximos produtos',
+      paginationBullet: 'Ir para a página {{index}}'
+    },
 
     /** Produto exibido nos cards, conforme o Figma (os 5 cards são idênticos). */
     product: {

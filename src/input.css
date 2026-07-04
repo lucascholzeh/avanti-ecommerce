@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* Bullets da paginação dos carrosséis (7px, cores do Figma).
+     Classes simples porque o Swiper monta seletores a partir delas. */
+  .carousel-bullet {
+    @apply h-[7px] w-[7px] cursor-pointer rounded-full bg-dot-inactive;
+  }
+
+  .carousel-bullet-active {
+    @apply bg-grey-darkest;
+  }
+}

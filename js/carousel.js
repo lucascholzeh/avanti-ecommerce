@@ -52,10 +52,43 @@ const AvantiCarousel = (() => {
       .join('');
   };
 
+  /**
+   * Cria a instância Swiper de um carrossel com setas, dots, swipe e teclado.
+   * @param {Element} section Elemento com [data-carousel].
+   * @param {Object} config Configuração global (AvantiConfig.carousel).
+   * @returns {Swiper} Instância criada.
+   */
+  const createSwiper = (section, config) => {
+    return new Swiper(section.querySelector(config.swiperSelector), {
+      slidesPerView: 'auto',
+      spaceBetween: config.slideGap,
+      rewind: true,
+      watchOverflow: false,
+      grabCursor: true,
+      keyboard: { enabled: true, onlyInViewport: true },
+      navigation: {
+        prevEl: section.querySelector(config.prevSelector),
+        nextEl: section.querySelector(config.nextSelector)
+      },
+      pagination: {
+        el: section.querySelector(config.paginationSelector),
+        clickable: true,
+        bulletClass: config.bulletClass,
+        bulletActiveClass: config.bulletActiveClass
+      },
+      a11y: {
+        prevSlideMessage: config.a11yMessages.prevSlide,
+        nextSlideMessage: config.a11yMessages.nextSlide,
+        paginationBulletMessage: config.a11yMessages.paginationBullet
+      }
+    });
+  };
+
   /** Inicializa todos os carrosséis da página. */
   const init = (config) => {
     document.querySelectorAll(config.sectionSelector).forEach((section) => {
       renderSlides(section, config);
+      createSwiper(section, config);
     });
   };
 
