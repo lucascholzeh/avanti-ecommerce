@@ -1,1 +1,4 @@
-// Ponto de entrada — inicializa busca e carrosséis quando o DOM estiver pronto.
+// Ponto de entrada — inicializa os módulos quando o DOM estiver pronto.
+document.addEventListener('DOMContentLoaded', () => {
+  AvantiCarousel.init(AvantiConfig.carousel);
+});

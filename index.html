@@ -16,284 +16,330 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="dist/output.css" />
 </head>
-<body>
-  <header>
-    <p>Ganhe <mark>R$10,00</mark> de desconto no seu primeiro pedido. Utilize o cupom DESCONTO10</p>
+<body class="bg-white font-sans text-black antialiased">
+  <header class="relative z-20">
+    <p class="flex h-[30px] items-center justify-center border border-black bg-primary text-[14px] font-bold leading-[22px] text-white">
+      Ganhe&nbsp;
+      <mark class="rounded-[4px] bg-coupon-purple px-[4px] text-white">R$10,00</mark>
+      &nbsp;de desconto no seu primeiro pedido. Utilize o cupom DESCONTO10
+    </p>
 
-    <div>
-      <a href="#">
-        <img src="assets/icons/logo-avanti.svg" alt="Avanti" />
-      </a>
+    <div class="bg-white shadow-header">
+      <div class="mx-auto max-w-[1260px] pb-[18px] pt-[16px]">
+        <div class="flex h-[40px] items-center">
+          <a href="#" class="shrink-0">
+            <img src="assets/icons/logo-avanti.svg" alt="Avanti" class="h-[27px] w-[153px]" />
+          </a>
 
-      <form role="search" data-search-form>
-        <label for="search-input">Digite aqui o que você procura</label>
-        <input id="search-input" type="search" placeholder="Digite aqui o que você procura" autocomplete="off" data-search-input />
-        <button type="submit" aria-label="Buscar">
-          <img src="assets/icons/icon-search.svg" alt="" aria-hidden="true" />
-        </button>
-        <p data-search-feedback aria-live="polite" hidden></p>
-      </form>
+          <form role="search" class="relative ml-[66px] w-[596px]" data-search-form>
+            <label for="search-input" class="sr-only">Digite aqui o que você procura</label>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Digite aqui o que você procura"
+              autocomplete="off"
+              data-search-input
+              class="h-[40px] w-full rounded-[10px] border border-grey-medium pl-[24px] pr-[56px] text-[14px] font-semibold text-black outline-none placeholder:font-semibold placeholder:text-black"
+            />
+            <button type="submit" aria-label="Buscar" class="absolute right-[20px] top-1/2 -translate-y-1/2">
+              <img src="assets/icons/icon-search.svg" alt="" aria-hidden="true" class="h-[19px] w-[19px]" />
+            </button>
+            <p data-search-feedback aria-live="polite" hidden class="absolute left-[24px] top-full mt-[6px] text-[14px] text-grey-darkest"></p>
+          </form>
 
-      <a href="#">
-        <img src="assets/icons/icon-user.svg" alt="" aria-hidden="true" />
-        <span>Olá,<br />Nome cliente!</span>
-      </a>
+          <a href="#" class="ml-auto flex items-center gap-[8px]">
+            <img src="assets/icons/icon-user.svg" alt="" aria-hidden="true" class="h-[24px] w-[21px]" />
+            <span class="text-[14px] font-semibold leading-[14px]">Olá,<br />Nome cliente!</span>
+          </a>
 
-      <a href="#" aria-label="Carrinho de compras, 2 itens">
-        <img src="assets/icons/icon-cart.svg" alt="" aria-hidden="true" />
-        <span aria-hidden="true">2</span>
-      </a>
-    </div>
+          <a href="#" aria-label="Carrinho de compras, 2 itens" class="relative ml-[24px]">
+            <img src="assets/icons/icon-cart.svg" alt="" aria-hidden="true" class="h-[24px] w-[25px]" />
+            <span aria-hidden="true" class="absolute -right-[9px] -top-[10px] flex h-[21px] w-[21px] items-center justify-center rounded-full bg-primary font-nunito text-[12px] font-bold leading-[14px] text-white">2</span>
+          </a>
+        </div>
 
-    <nav aria-label="Categorias de produtos">
-      <ul>
-        <li>
-          <button type="button" aria-expanded="false" aria-controls="mega-menu" data-megamenu-toggle>
-            <img src="assets/icons/icon-menu-hamburger.svg" alt="" aria-hidden="true" />
-            Todas as Categorias
-          </button>
+        <nav aria-label="Categorias de produtos" class="relative mt-[22px]">
+          <ul class="flex items-start gap-[45px]">
+            <li>
+              <button type="button" aria-expanded="false" aria-controls="mega-menu" data-megamenu-toggle class="flex items-center gap-[8px] text-[14px] font-bold leading-[22px]">
+                <img src="assets/icons/icon-menu-hamburger.svg" alt="" aria-hidden="true" class="h-[10px] w-[14px]" />
+                Todas as Categorias
+              </button>
+            </li>
+            <li><a href="#" class="text-[14px] leading-[22px]">Departamento</a></li>
+            <li><a href="#" class="text-[14px] leading-[22px]">Departamento</a></li>
+            <li><a href="#" class="text-[14px] leading-[22px]">Departamento</a></li>
+            <li><a href="#" class="text-[14px] leading-[22px]">Departamento</a></li>
+            <li><a href="#" class="text-[14px] leading-[22px]">Departamento</a></li>
+            <li><a href="#" class="text-[14px] leading-[22px]">Departamento</a></li>
+            <li><a href="#" class="text-[14px] leading-[22px]">Departamento</a></li>
+            <li><a href="#" class="text-[14px] leading-[22px]">Departamento</a></li>
+          </ul>
 
-          <div id="mega-menu" hidden data-megamenu>
-            <ul>
-              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-blue.svg" alt="" aria-hidden="true" /></a></li>
-              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
-              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
-              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
-              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
-              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
-              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
-              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
-              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
-              <li><a href="#">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" /></a></li>
+          <div id="mega-menu" hidden data-megamenu class="absolute left-0 top-[calc(100%+20px)] z-30 h-[329px] w-[1261px] bg-white shadow-megamenu">
+            <div class="absolute left-0 top-0 h-full w-[234px] bg-grey-light/[0.57]"></div>
+            <img src="assets/icons/megamenu-divider.svg" alt="" aria-hidden="true" class="absolute left-[221px] top-[20px] h-[298px]" />
+
+            <ul class="absolute left-[16px] top-[20px] flex w-[190px] flex-col gap-[12px]">
+              <li><a href="#" class="flex items-center justify-between text-[14px] font-bold leading-[normal] text-primary">Departamento <img src="assets/icons/icon-chevron-blue.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+            <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-dark.svg" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
             </ul>
 
-            <ul>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
+            <ul class="absolute left-[268px] top-[18px] flex flex-col gap-[12px]">
+              <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
             </ul>
 
-            <ul>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
+            <ul class="absolute left-[458px] top-[18px] flex flex-col gap-[12px]">
+              <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
             </ul>
 
-            <ul>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
-              <li><a href="#">Categoria</a></li>
+            <ul class="absolute left-[648px] top-[18px] flex flex-col gap-[12px]">
+              <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
+              <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
             </ul>
 
-            <a href="#">
-              <img src="assets/images/megamenu-promo.png" alt="Caneca preta Avanti sobre tábua de madeira" />
-              <p>Confira os<br />Produtos<br /><strong>Que acabaram<br />De chegar</strong></p>
-              <span>ver todos</span>
+            <a href="#" class="absolute left-[1001px] top-[20px] block h-[298px] w-[236px] overflow-hidden rounded-[10px]">
+              <img src="assets/images/megamenu-promo.png" alt="Caneca preta Avanti sobre tábua de madeira" class="absolute inset-0 h-full w-full object-cover" />
+              <img src="assets/icons/megamenu-promo-overlay.svg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full" />
+              <p class="absolute left-[27px] top-[44px] text-[24px] leading-[27px] text-white">Confira os<br />Produtos<br /><strong class="font-bold">Que acabaram<br />De chegar</strong></p>
+              <span class="absolute left-[27px] top-[213px] flex h-[38px] w-[116px] items-center justify-center font-heebo text-[12px] font-bold uppercase text-white">
+                <img src="assets/icons/megamenu-vertodos-pill.svg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full" />
+                <span class="relative">ver todos</span>
+              </span>
             </a>
           </div>
-        </li>
-        <li><a href="#">Departamento</a></li>
-        <li><a href="#">Departamento</a></li>
-        <li><a href="#">Departamento</a></li>
-        <li><a href="#">Departamento</a></li>
-        <li><a href="#">Departamento</a></li>
-        <li><a href="#">Departamento</a></li>
-        <li><a href="#">Departamento</a></li>
-        <li><a href="#">Departamento</a></li>
-      </ul>
-    </nav>
+        </nav>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section aria-labelledby="hero-title">
-      <img src="assets/images/hero-supersale.png" alt="Pilha de roupas dobradas sobre uma cadeira branca" />
-      <div>
-        <h1 id="hero-title"><strong>super</strong><span>sale</span></h1>
-        <p>Itens selecionados com até</p>
-        <p>50%off</p>
-      </div>
-    </section>
-
-    <section aria-labelledby="launches-title-1">
-      <header>
-        <h2 id="launches-title-1">Lançamentos</h2>
-        <a href="#">Ver mais</a>
-      </header>
-      <div data-carousel="lancamentos-1">
-        <div class="swiper">
-          <div class="swiper-wrapper"><!-- slides renderizados por js/carousel.js a partir de js/config.js --></div>
+    <section aria-labelledby="hero-title" class="bg-hero-grey">
+      <div class="mx-auto flex h-[510px] max-w-[1920px] items-center gap-[87px] pl-[305px]">
+        <img src="assets/images/hero-supersale.png" alt="Pilha de roupas dobradas sobre uma cadeira branca" class="h-[510px] w-[685px] shrink-0 object-cover mix-blend-darken" />
+        <div class="flex w-[576px] flex-col items-center gap-[12px]">
+          <h1 id="hero-title" class="font-nunito text-[100px] uppercase leading-[normal] text-black">
+            <strong class="font-bold">super</strong><span class="font-light">sale</span>
+          </h1>
+          <p class="font-nunito text-[25px] font-bold uppercase leading-[normal] tracking-[7.5px] text-primary">Itens selecionados com até</p>
+          <p class="font-nunito text-[60px] font-bold uppercase leading-[normal] text-primary">50%off</p>
         </div>
-        <button type="button" aria-label="Produtos anteriores" data-carousel-prev>
-          <img src="assets/icons/icon-arrow-prev.svg" alt="" aria-hidden="true" />
-        </button>
-        <button type="button" aria-label="Próximos produtos" data-carousel-next>
-          <img src="assets/icons/icon-arrow-next.svg" alt="" aria-hidden="true" />
-        </button>
-        <div data-carousel-pagination></div>
       </div>
     </section>
 
-    <section aria-labelledby="mug-banner-title-1">
-      <img src="assets/images/banner-mug.png" alt="Caneca preta com logo Avanti" />
-      <div>
-        <h2 id="mug-banner-title-1">Lorem Ipsum</h2>
-        <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
-        <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
-      </div>
-    </section>
-
-    <section aria-labelledby="features-title">
-      <div>
-        <h2 id="features-title">Lorem ipsum</h2>
-        <ul>
-          <li>
-            <img src="assets/icons/icon-map-pin-1.svg" alt="" aria-hidden="true" />
-            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-          </li>
-          <li>
-            <img src="assets/icons/icon-map-pin-2.svg" alt="" aria-hidden="true" />
-            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-          </li>
-          <li>
-            <img src="assets/icons/icon-map-pin-3.svg" alt="" aria-hidden="true" />
-            <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
-          </li>
-        </ul>
-      </div>
-      <img src="assets/images/banner-mug-board.png" alt="Caneca preta Avanti sobre tábua de madeira na cozinha" />
-    </section>
-
-    <section aria-labelledby="mug-banner-title-2">
-      <img src="assets/images/banner-mug.png" alt="Caneca preta com logo Avanti" />
-      <div>
-        <h2 id="mug-banner-title-2">Lorem Ipsum</h2>
-        <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
-        <p>Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
-      </div>
-    </section>
-
-    <section aria-labelledby="launches-title-2">
-      <header>
-        <h2 id="launches-title-2">Lançamentos</h2>
-        <a href="#">Ver mais</a>
+    <section aria-labelledby="launches-title-1" class="mx-auto mt-[97px] max-w-[1260px]">
+      <header class="flex items-center justify-between">
+        <h2 id="launches-title-1" class="text-[20px] font-bold leading-[27px]">Lançamentos</h2>
+        <a href="#" class="text-[14px] font-bold leading-[20px] text-grey-darkest">Ver mais</a>
       </header>
-      <div data-carousel="lancamentos-2">
+      <div data-carousel="lancamentos-1" class="relative mt-[19px]">
         <div class="swiper">
-          <div class="swiper-wrapper"><!-- slides renderizados por js/carousel.js a partir de js/config.js --></div>
+          <ul class="swiper-wrapper"><!-- slides renderizados por js/carousel.js a partir de js/config.js --></ul>
         </div>
-        <button type="button" aria-label="Produtos anteriores" data-carousel-prev>
-          <img src="assets/icons/icon-arrow-prev.svg" alt="" aria-hidden="true" />
+        <button type="button" aria-label="Produtos anteriores" data-carousel-prev class="absolute left-[-15px] top-[208px] z-10 h-[30px] w-[30px]">
+          <img src="assets/icons/icon-arrow-prev.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none -translate-x-[4px] -translate-y-[1px]" />
         </button>
-        <button type="button" aria-label="Próximos produtos" data-carousel-next>
-          <img src="assets/icons/icon-arrow-next.svg" alt="" aria-hidden="true" />
+        <button type="button" aria-label="Próximos produtos" data-carousel-next class="absolute right-[-15px] top-[208px] z-10 h-[30px] w-[30px]">
+          <img src="assets/icons/icon-arrow-next.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none -translate-x-[4px] -translate-y-[1px]" />
         </button>
-        <div data-carousel-pagination></div>
+        <div data-carousel-pagination class="mt-[16px] flex h-[7px] items-center justify-center gap-[7px]"></div>
       </div>
     </section>
 
-    <section aria-label="Contato">
-      <img src="assets/images/banner-showroom.png" alt="Loja conceito Avanti com painéis azuis e letreiro luminoso" />
-      <p>Entre em contato conosco e verifique a disponibilidade para sua região!</p>
+    <section aria-labelledby="mug-banner-title-1" class="mx-auto mt-[51px] flex max-w-[1260px] gap-[37px] pl-[46px]">
+      <div class="relative h-[747px] w-[653px] shrink-0 bg-photo-grey">
+        <div class="absolute left-[33px] top-[78px] flex h-[592px] w-[588px] items-center justify-center">
+          <div class="relative h-[528px] w-[523px] -rotate-[7.54deg] overflow-hidden">
+            <img src="assets/images/banner-mug.png" alt="Caneca preta com logo Avanti" class="absolute left-[-15.88%] top-[-4.93%] h-[109.85%] w-[121.1%] max-w-none" />
+          </div>
+        </div>
+      </div>
+      <div class="flex w-[487px] flex-col gap-[22px] pt-[105px]">
+        <h2 id="mug-banner-title-1" class="font-nunito text-[30px] font-bold uppercase leading-[1.4] tracking-[1.2px]">Lorem Ipsum</h2>
+        <p class="font-nunito text-[18px] leading-[1.4] tracking-[0.9px]">Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+        <p class="font-nunito text-[18px] leading-[1.4] tracking-[0.9px]">Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+      </div>
     </section>
 
-    <section aria-labelledby="newsletter-title">
-      <h2 id="newsletter-title">Cadastre-se na nossa <span>newsletter</span></h2>
-      <form>
-        <label for="newsletter-name">Digite seu nome</label>
-        <input id="newsletter-name" type="text" placeholder="Digite seu nome" autocomplete="name" />
+    <section aria-labelledby="features-title" class="relative mt-[76px] bg-band-grey">
+      <div class="mx-auto flex h-[825px] max-w-[1260px] gap-[49px] pl-[47px]">
+        <div class="mt-[142px] w-[476px] shrink-0">
+          <h2 id="features-title" class="text-center font-nunito text-[30px] font-bold uppercase leading-[1.4] tracking-[1.2px] text-band-text">Lorem ipsum</h2>
+          <ul class="mt-[50px] flex flex-col gap-[50px]">
+            <li class="flex items-start gap-[23px]">
+              <img src="assets/icons/icon-map-pin-1.svg" alt="" aria-hidden="true" class="mt-[12px] h-[90px] w-[90px] shrink-0" />
+              <p class="w-[360px] font-nunito text-[18px] leading-[1.4] tracking-[0.9px] text-band-text">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+            </li>
+            <li class="flex items-start gap-[23px]">
+              <img src="assets/icons/icon-map-pin-2.svg" alt="" aria-hidden="true" class="mt-[12px] h-[90px] w-[90px] shrink-0" />
+              <p class="w-[360px] font-nunito text-[18px] leading-[1.4] tracking-[0.9px] text-band-text">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+            </li>
+            <li class="flex items-start gap-[23px]">
+              <img src="assets/icons/icon-map-pin-3.svg" alt="" aria-hidden="true" class="mt-[12px] h-[90px] w-[90px] shrink-0" />
+              <p class="w-[360px] font-nunito text-[18px] leading-[1.4] tracking-[0.9px] text-band-text">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="relative mt-[97px] h-[728px] w-[652px] shrink-0 overflow-hidden">
+          <img src="assets/images/banner-mug-board.png" alt="Caneca preta Avanti sobre tábua de madeira na cozinha" class="absolute left-[-5.84%] top-0 h-full w-[111.68%] max-w-none object-cover" />
+        </div>
+      </div>
+    </section>
 
-        <label for="newsletter-email">Digite seu e-mail</label>
-        <input id="newsletter-email" type="email" placeholder="Digite seu e-mail" autocomplete="email" />
+    <section aria-labelledby="mug-banner-title-2" class="mx-auto mt-[65px] flex max-w-[1260px] gap-[37px] pl-[46px]">
+      <div class="relative h-[747px] w-[653px] shrink-0 bg-photo-grey">
+        <div class="absolute left-[33px] top-[78px] flex h-[592px] w-[588px] items-center justify-center">
+          <div class="relative h-[528px] w-[523px] -rotate-[7.54deg] overflow-hidden">
+            <img src="assets/images/banner-mug.png" alt="Caneca preta com logo Avanti" class="absolute left-[-15.88%] top-[-4.93%] h-[109.85%] w-[121.1%] max-w-none" />
+          </div>
+        </div>
+      </div>
+      <div class="flex w-[487px] flex-col gap-[22px] pt-[105px]">
+        <h2 id="mug-banner-title-2" class="font-nunito text-[30px] font-bold uppercase leading-[1.4] tracking-[1.2px]">Lorem Ipsum</h2>
+        <p class="font-nunito text-[18px] leading-[1.4] tracking-[0.9px]">Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+        <p class="font-nunito text-[18px] leading-[1.4] tracking-[0.9px]">Duis consectetur metus nec lacus auctor dignissim. Mauris vitae finibus dui. Mauris laoreet lacus ut eleifend viverra. Cras efficitur volutpat dui, in lobortis metus lacinia sit amet. Sed lacinia pharetra magna, vel pulvinar ligula hendrerit a. Maecenas fringilla porttitor tortor eget lacinia. Donec sollicitudin euismod orci, auctor fringilla magna consequat interdum. Fusce sagittis elit a libero commodo egestas efficitur id augue.</p>
+      </div>
+    </section>
 
-        <label>
-          <input type="checkbox" />
-          <span>Estou de acordo com a <a href="#">Política de Privacidade</a></span>
+    <section aria-labelledby="launches-title-2" class="mx-auto mt-[64px] max-w-[1260px]">
+      <header class="flex items-center justify-between">
+        <h2 id="launches-title-2" class="text-[20px] font-bold leading-[27px]">Lançamentos</h2>
+        <a href="#" class="text-[14px] font-bold leading-[20px] text-grey-darkest">Ver mais</a>
+      </header>
+      <div data-carousel="lancamentos-2" class="relative mt-[19px]">
+        <div class="swiper">
+          <ul class="swiper-wrapper"><!-- slides renderizados por js/carousel.js a partir de js/config.js --></ul>
+        </div>
+        <button type="button" aria-label="Produtos anteriores" data-carousel-prev class="absolute left-[-15px] top-[208px] z-10 h-[30px] w-[30px]">
+          <img src="assets/icons/icon-arrow-prev.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none -translate-x-[4px] -translate-y-[1px]" />
+        </button>
+        <button type="button" aria-label="Próximos produtos" data-carousel-next class="absolute right-[-15px] top-[208px] z-10 h-[30px] w-[30px]">
+          <img src="assets/icons/icon-arrow-next.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none -translate-x-[4px] -translate-y-[1px]" />
+        </button>
+        <div data-carousel-pagination class="mt-[16px] flex h-[7px] items-center justify-center gap-[7px]"></div>
+      </div>
+    </section>
+
+    <section aria-label="Contato" class="relative mt-[68px] h-[660px] overflow-hidden">
+      <img src="assets/images/banner-showroom.png" alt="Loja conceito Avanti com painéis azuis e letreiro luminoso" class="absolute inset-0 h-full w-full object-cover blur-[2px]" />
+      <p class="absolute top-[264px] flex h-[132px] w-full items-center justify-center bg-primary text-center font-nunito text-[30px] leading-[1.4] text-white">Entre em contato conosco e verifique a disponibilidade para sua região!</p>
+    </section>
+
+    <section aria-labelledby="newsletter-title" class="mx-auto mt-[67px] max-w-[1260px]">
+      <h2 id="newsletter-title" class="text-center text-[20px] font-bold leading-[27px]">Cadastre-se na nossa <span class="text-primary">newsletter</span></h2>
+      <form class="mt-[24px] flex h-[176px] items-center gap-[24px] rounded-[8px] bg-band-grey pl-[114px]">
+        <div>
+          <label for="newsletter-name" class="sr-only">Digite seu nome</label>
+          <input id="newsletter-name" type="text" placeholder="Digite seu nome" autocomplete="name" class="h-[48px] w-[280px] rounded-[8px] bg-white pl-[24px] text-[14px] text-grey-darkest outline-none placeholder:text-grey-darkest" />
+        </div>
+        <div>
+          <label for="newsletter-email" class="sr-only">Digite seu e-mail</label>
+          <input id="newsletter-email" type="email" placeholder="Digite seu e-mail" autocomplete="email" class="h-[48px] w-[280px] rounded-[8px] bg-white pl-[24px] text-[14px] text-grey-darkest outline-none placeholder:text-grey-darkest" />
+        </div>
+        <label class="flex items-center gap-[8px]">
+          <input type="checkbox" class="h-[16px] w-[16px] shrink-0 appearance-none rounded-[4px] border border-grey-medium bg-white checked:border-primary checked:bg-primary" />
+          <span class="text-[12px] font-bold text-grey-dark">Estou de acordo com a <a href="#" class="underline">Política de Privacidade</a></span>
         </label>
-
-        <button type="submit">Cadastrar</button>
+        <button type="submit" class="flex items-center justify-center rounded-[8px] bg-primary px-[24px] py-[14px] text-[16px] font-bold leading-[20px] text-white transition-opacity hover:opacity-90">Cadastrar</button>
       </form>
     </section>
   </main>
 
-  <footer>
-    <div>
-      <div>
-        <img src="assets/icons/logo-avanti-footer.svg" alt="Avanti" />
-        <ul>
-          <li><a href="#" aria-label="Instagram"><img src="assets/icons/social-instagram.svg" alt="" aria-hidden="true" /></a></li>
-          <li><a href="#" aria-label="Facebook"><img src="assets/icons/social-facebook.svg" alt="" aria-hidden="true" /></a></li>
-          <li><a href="#" aria-label="YouTube"><img src="assets/icons/social-youtube.svg" alt="" aria-hidden="true" /></a></li>
-          <li><a href="#" aria-label="TikTok"><img src="assets/icons/social-tiktok.svg" alt="" aria-hidden="true" /></a></li>
+  <footer class="mt-[79px]">
+    <div class="bg-grey-light">
+      <div class="relative mx-auto h-[386px] max-w-[1920px]">
+        <div class="absolute left-[396px] top-[64px] flex flex-col gap-[40px]">
+          <img src="assets/icons/logo-avanti-footer.svg" alt="Avanti" class="h-[27px] w-[152px]" />
+          <ul class="flex h-[26px] items-center gap-[40px]">
+            <li><a href="#" aria-label="Instagram"><img src="assets/icons/social-instagram.svg" alt="" aria-hidden="true" class="h-[19px] w-[19px]" /></a></li>
+            <li><a href="#" aria-label="Facebook"><img src="assets/icons/social-facebook.svg" alt="" aria-hidden="true" class="h-[22px] w-[10px]" /></a></li>
+            <li><a href="#" aria-label="YouTube"><img src="assets/icons/social-youtube.svg" alt="" aria-hidden="true" class="h-[26px] w-[26px]" /></a></li>
+            <li><a href="#" aria-label="TikTok"><img src="assets/icons/social-tiktok.svg" alt="" aria-hidden="true" class="h-[21px] w-[18px]" /></a></li>
+          </ul>
+        </div>
+
+        <section aria-label="Institucional" class="absolute left-[732px] top-[64px]">
+          <h2 class="text-[14px] font-bold text-black"><span aria-hidden="true" class="text-[12px] text-grey-dark">&lt;h4&gt;</span> Institucional</h2>
+          <ul class="mt-[11px]">
+            <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Sobre Nós</a></li>
+            <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Nossas Lojas</a></li>
+            <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Privacidade e Segurança</a></li>
+            <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Termos e Condições</a></li>
+          </ul>
+        </section>
+
+        <section aria-label="Central de ajuda" class="absolute left-[1028px] top-[64px]">
+          <h2 class="text-[14px] font-bold text-black"><span aria-hidden="true" class="text-[12px] text-grey-dark">&lt;h4&gt;</span> Central de ajuda</h2>
+          <ul class="mt-[11px]">
+            <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Fale Conosco</a></li>
+            <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Frete e Entrega</a></li>
+            <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Trocas e Devoluções</a></li>
+            <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Formas de Pagamento</a></li>
+            <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> FAQ</a></li>
+          </ul>
+        </section>
+
+        <section aria-label="Atendimento" class="absolute left-[1312px] top-[64px]">
+          <h2 class="text-[14px] font-bold text-black"><span aria-hidden="true" class="text-[12px] text-grey-dark">&lt;h4&gt;</span> Atendimento</h2>
+          <address class="mt-[11px] not-italic">
+            <p class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> <strong class="font-bold">Telefone:</strong> (00) 1234-5678</p>
+            <p class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> <strong class="font-bold">E-mail:</strong> exemplo@exemplo.com.br</p>
+            <p class="text-[12px] font-bold leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-grey-dark">&lt;h5&gt;</span> Horário de atendimento:</p>
+            <p class="text-[12px] leading-[22px] text-grey-darkest">Segunda a Sábado: 07h00 às 23h00</p>
+            <p class="text-[12px] leading-[22px] text-grey-darkest">Domingos e Feriados: 07h00 às 21h00</p>
+          </address>
+        </section>
+
+        <ul aria-label="Formas de pagamento" class="absolute left-1/2 top-[298px] flex -translate-x-1/2 items-center gap-[34px]">
+          <li><img src="assets/icons/pay-amex.svg" alt="American Express" class="w-[27px]" /></li>
+          <li><img src="assets/icons/pay-mastercard.svg" alt="Mastercard" class="w-[26px]" /></li>
+          <li><img src="assets/icons/pay-visa.svg" alt="Visa" class="w-[36px]" /></li>
+          <li><img src="assets/icons/pay-hipercard.svg" alt="Hipercard" class="w-[36px]" /></li>
+          <li><img src="assets/icons/pay-elo.svg" alt="Elo" class="w-[32px]" /></li>
+          <li><img src="assets/icons/pay-diners.svg" alt="Diners Club" class="w-[30px]" /></li>
+          <li><img src="assets/icons/pay-paypal.svg" alt="PayPal" class="w-[32px]" /></li>
+          <li><img src="assets/icons/pay-pix.svg" alt="Pix" class="w-[23px]" /></li>
+          <li><img src="assets/icons/pay-boleto.svg" alt="Boleto bancário" class="w-[36px]" /></li>
         </ul>
       </div>
-
-      <section aria-label="Institucional">
-        <h2><span aria-hidden="true">&lt;h4&gt;</span> Institucional</h2>
-        <ul>
-          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Sobre Nós</a></li>
-          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Nossas Lojas</a></li>
-          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Privacidade e Segurança</a></li>
-          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Termos e Condições</a></li>
-        </ul>
-      </section>
-
-      <section aria-label="Central de ajuda">
-        <h2><span aria-hidden="true">&lt;h4&gt;</span> Central de ajuda</h2>
-        <ul>
-          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Fale Conosco</a></li>
-          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Frete e Entrega</a></li>
-          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Trocas e Devoluções</a></li>
-          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> Formas de Pagamento</a></li>
-          <li><a href="#"><span aria-hidden="true">&lt;h5&gt;</span> FAQ</a></li>
-        </ul>
-      </section>
-
-      <section aria-label="Atendimento">
-        <h2><span aria-hidden="true">&lt;h4&gt;</span> Atendimento</h2>
-        <address>
-          <p><span aria-hidden="true">&lt;h5&gt;</span> <strong>Telefone:</strong> (00) 1234-5678</p>
-          <p><span aria-hidden="true">&lt;h5&gt;</span> <strong>E-mail:</strong> exemplo@exemplo.com.br</p>
-          <p><span aria-hidden="true">&lt;h5&gt;</span> <strong>Horário de atendimento:</strong></p>
-          <p>Segunda a Sábado: 07h00 às 23h00</p>
-          <p>Domingos e Feriados: 07h00 às 21h00</p>
-        </address>
-      </section>
-
-      <ul aria-label="Formas de pagamento">
-        <li><img src="assets/icons/pay-amex.svg" alt="American Express" /></li>
-        <li><img src="assets/icons/pay-mastercard.svg" alt="Mastercard" /></li>
-        <li><img src="assets/icons/pay-visa.svg" alt="Visa" /></li>
-        <li><img src="assets/icons/pay-hipercard.svg" alt="Hipercard" /></li>
-        <li><img src="assets/icons/pay-elo.svg" alt="Elo" /></li>
-        <li><img src="assets/icons/pay-diners.svg" alt="Diners Club" /></li>
-        <li><img src="assets/icons/pay-paypal.svg" alt="PayPal" /></li>
-        <li><img src="assets/icons/pay-pix.svg" alt="Pix" /></li>
-        <li><img src="assets/icons/pay-boleto.svg" alt="Boleto bancário" /></li>
-      </ul>
     </div>
 
-    <div>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-      <div>
-        <img src="assets/icons/seal-lets-encrypt.svg" alt="Let's Encrypt" />
-        <img src="assets/images/seal-vtex-pci.png" alt="VTEX PCI Certified" />
-        <img src="assets/icons/logo-avanti-grey.svg" alt="Avanti" />
-        <img src="assets/icons/logo-vtex.svg" alt="VTEX" />
+    <div class="bg-white pb-[16px]">
+      <p class="mx-auto max-w-[1074px] pt-[40px] text-center text-[12px] leading-[20px] text-grey-darkest">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+      <div class="mt-[40px] flex items-center justify-center gap-[24px]">
+        <img src="assets/icons/seal-lets-encrypt.svg" alt="Let's Encrypt" class="h-[30px] w-[39px]" />
+        <img src="assets/images/seal-vtex-pci.png" alt="VTEX PCI Certified" class="h-[32px] w-[51px]" />
+        <span aria-hidden="true" class="h-[15px] w-px bg-grey-medium"></span>
+        <img src="assets/icons/logo-avanti-grey.svg" alt="Avanti" class="h-[10px] w-[57px]" />
+        <img src="assets/icons/logo-vtex.svg" alt="VTEX" class="h-[19px] w-[53px]" />
       </div>
     </div>
   </footer>
