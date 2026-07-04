@@ -21,11 +21,7 @@ const AvantiCarousel = (() => {
         <img src="${product.image}" alt="${product.imageAlt}" class="absolute left-[8px] top-[6px] h-[222px] w-[222px] object-cover" />
         <span class="absolute left-[8px] top-[7px] rounded-[4px] px-[5px] text-[10px] font-bold uppercase leading-[22px] ${BADGE_VARIANT_CLASSES[badgeVariant]}">${product.badgeLabel}</span>
 
-        <h3 class="absolute left-[8px] right-[8px] top-[244px] font-normal capitalize leading-[normal]">
-          <span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">${product.titlePrefix.replace('<', '&lt;').replace('>', '&gt;')}</span>
-          <span class="text-[14px] text-grey-darkest">${product.titleText}</span>
-          <span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">${product.titleSuffix.replace('<', '&lt;').replace('>', '&gt;')}</span>
-        </h3>
+        <h3 class="absolute left-[8px] right-[8px] top-[244px] text-[14px] font-normal capitalize leading-[normal] text-grey-darkest">${product.titleText}</h3>
 
         <s class="absolute left-[8px] top-[287px] text-[12px] leading-[normal] text-grey-darkest">${product.oldPrice}</s>
         <span class="absolute left-[80px] top-[295px] rounded-[4px] bg-tag-teal px-[8px] py-[4px] text-[11px] font-bold uppercase leading-[12px] text-white underline">${product.discountTag}</span>
@@ -46,8 +42,12 @@ const AvantiCarousel = (() => {
     const instance = config.instances.find((item) => item.id === instanceId);
     if (!instance) return;
 
+    // No frame de 1920px os 5 cards cabem exatos no container, então não haveria
+    // overflow para rolar. Repetimos a sequência (os cards são idênticos no Figma)
+    // para que o loop tenha conteúdo real a girar em qualquer largura de tela.
+    const variants = [...instance.badgeVariants, ...instance.badgeVariants];
     const wrapper = section.querySelector(config.wrapperSelector);
-    wrapper.innerHTML = instance.badgeVariants
+    wrapper.innerHTML = variants
       .map((variant) => buildSlideHtml(config.product, variant))
       .join('');
   };
@@ -62,7 +62,7 @@ const AvantiCarousel = (() => {
     return new Swiper(section.querySelector(config.swiperSelector), {
       slidesPerView: 'auto',
       spaceBetween: config.slideGap,
-      rewind: true,
+      loop: true,
       watchOverflow: false,
       grabCursor: true,
       keyboard: { enabled: true, onlyInViewport: true },
@@ -73,6 +73,8 @@ const AvantiCarousel = (() => {
       pagination: {
         el: section.querySelector(config.paginationSelector),
         clickable: true,
+        dynamicBullets: true,
+        dynamicMainBullets: 3,
         bulletClass: config.bulletClass,
         bulletActiveClass: config.bulletActiveClass
       },
