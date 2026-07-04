@@ -12,4 +12,15 @@
   .carousel-bullet-active {
     @apply bg-grey-darkest;
   }
+
+  /* O ícone de seta (PNG preto) usado no departamento ativo do mega menu
+     precisa ficar azul (#005CFF); recolorimos via filtro. */
+  .chevron-blue {
+    filter: invert(23%) sepia(97%) saturate(6083%) hue-rotate(213deg) brightness(101%) contrast(105%);
+  }
+
+  /* Sombra dos textos do banner SUPERSALE (drop shadow padrão do Figma). */
+  .hero-text-shadow {
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
 }
