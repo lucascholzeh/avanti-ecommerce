@@ -2,7 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Rede de segurança contra scroll horizontal: entre lg (1024px) e ~1400px
+     algumas seções de duas colunas do Figma têm largura fixa (hero 685+576,
+     features 652+476) que só cabe a partir de ~1400px. As seções já contêm a
+     própria sangria com overflow-hidden; aqui garantimos, na raiz, que nenhum
+     resíduo gere barra horizontal — o overflow-x no <html> é o único que
+     confina o viewport de scroll da página. */
+  html {
+    overflow-x: hidden;
+  }
+}
+
 @layer components {
+  /* No Figma a página inteira fica deslocada ~33px para a direita dentro do
+     frame de 1920px (margem esquerda maior que a direita). Reproduzimos esse
+     deslocamento nos containers centrais. Como substitui o `mx-auto`, a classe
+     também centraliza por padrão; o viés só entra quando há espaço de sobra
+     (>= 1326px = 1260 do conteúdo + 66 do viés). Usa !important p/ vencer o
+     `mx-auto` da camada de utilitários caso ele ainda esteja presente. */
+  .lp-shift {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: 1326px) {
+    .lp-shift {
+      margin-left: calc((100% - 1260px) / 2 + 33px) !important;
+      margin-right: calc((100% - 1260px) / 2 - 33px) !important;
+    }
+  }
+
+  /* O rodapé no Figma é mais largo (~1157px) e começa em ~405px da esquerda
+     (leftM 405 / rightM 358). Mesmo esquema do .lp-shift, com a largura do rodapé. */
+  .lp-shift-footer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (min-width: 1240px) {
+    .lp-shift-footer {
+      margin-left: calc((100% - 1157px) / 2 + 25px) !important;
+      margin-right: calc((100% - 1157px) / 2 - 25px) !important;
+    }
+  }
+
   /* Bullets da paginação dos carrosséis (7px, cores do Figma).
      Classes simples porque o Swiper monta seletores a partir delas. */
   .carousel-bullet {

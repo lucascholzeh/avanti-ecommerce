@@ -35,6 +35,12 @@ const AvantiSearch = (() => {
     input.addEventListener('input', () => {
       if (input.value.trim() === '') clearFeedback();
     });
+
+    // Clicar fora do campo de busca também dispensa a mensagem: a busca
+    // anterior não deve permanecer visível depois que o usuário sai do campo.
+    document.addEventListener('click', (event) => {
+      if (!feedback.hidden && !form.contains(event.target)) clearFeedback();
+    });
   };
 
   return { init };
