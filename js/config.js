@@ -31,8 +31,17 @@ const AvantiConfig = {
     nextSelector: '[data-carousel-next]',
     paginationSelector: '[data-carousel-pagination]',
 
-    /** Espaço entre cards: (1260px do container − 5 × 238px de card) ÷ 4 vãos. */
+    /** Espaço entre cards no desktop: (1260px do container − 5 × 238px de card) ÷ 4 vãos. */
     slideGap: 17.5,
+    /**
+     * No mobile (< lg) o Figma usa cards de 181px e um gap bem menor (~9.4px):
+     * 2 cards + 1 gap = 181 + 9.4 + 181 ≈ 371px cabem no frame de 390px (útil ~373).
+     * Com o gap desktop de 17.5px os 2 cards não cabem em 390px e o carrossel
+     * cai para 1 card — por isso o gap é responsivo. Ver docs/figma-mobile-specs.md.
+     */
+    slideGapMobile: 9.4,
+    /** Breakpoint (px) a partir do qual o layout desktop (lg do Tailwind) vale. */
+    desktopBreakpoint: 1024,
     bulletClass: 'carousel-bullet',
     bulletActiveClass: 'carousel-bullet-active',
 

@@ -65,4 +65,15 @@
   .hero-text-shadow {
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
+
+  /* A barra de categorias tem overflow-x-auto: entre 1024px e ~1260px os itens
+     não cabem e o navegador mostra a scrollbar horizontal embaixo. Mantemos o
+     scroll (a barra "quebra"/rola), mas escondemos a scrollbar visível. */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE e Edge legado */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
 }

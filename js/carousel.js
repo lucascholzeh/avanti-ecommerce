@@ -107,7 +107,11 @@ const AvantiCarousel = (() => {
     if (!available) return;
     // Quantos cards + (n-1) gaps cabem inteiros. Pelo menos 1 (se um card for
     // mais largo que a área, mostramos 1 e não deixamos a largura ir a zero).
-    const perView = Math.max(1, Math.floor((available + gap) / (slideWidth + gap)));
+    // A tolerância absorve arredondamentos de sub-pixel (ex.: card 181px vs
+    // 181.29px do Figma, ou a largura útil ficando ~0.6px curta) para que o
+    // caso-limite de 2 cards em 390px não caia para 1 por causa de fração.
+    const tolerance = 2;
+    const perView = Math.max(1, Math.floor((available + gap + tolerance) / (slideWidth + gap)));
     const used = Math.min(available, perView * slideWidth + (perView - 1) * gap);
 
     swiperEl.style.width = `${used}px`;
@@ -115,15 +119,25 @@ const AvantiCarousel = (() => {
     swiperEl.style.marginRight = 'auto';
   };
 
+  /**
+   * Gap atual conforme a largura da janela: no mobile (< desktopBreakpoint) os
+   * cards são menores (181px) e o Figma usa um gap menor, o que é o que permite
+   * caber 2 cards em 390px. A partir do breakpoint vale o gap do desktop.
+   * @param {Object} config Configuração global (AvantiConfig.carousel).
+   * @returns {number} Espaço entre cards em px.
+   */
+  const currentGap = (config) =>
+    window.innerWidth >= config.desktopBreakpoint ? config.slideGap : config.slideGapMobile;
+
   const createSwiper = (section, config) => {
     const swiperEl = section.querySelector(config.swiperSelector);
-    fitWholeCards(swiperEl, config.slideGap);
+    fitWholeCards(swiperEl, currentGap(config));
 
     const swiper = new Swiper(swiperEl, {
       // 'auto' respeita a largura fixa dos cards; o padding do .swiper (acima)
       // garante que só cards inteiros fiquem na área visível.
       slidesPerView: 'auto',
-      spaceBetween: config.slideGap,
+      spaceBetween: currentGap(config),
       loop: true,
       watchOverflow: false,
       grabCursor: true,
@@ -144,7 +158,11 @@ const AvantiCarousel = (() => {
     window.addEventListener('resize', () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
-        fitWholeCards(swiperEl, config.slideGap);
+        const gap = currentGap(config);
+        // Ao cruzar o breakpoint o gap muda (181px/9.4 ↔ 238px/17.5); reflete no
+        // Swiper antes de remedir para que a largura útil use o espaçamento certo.
+        swiper.params.spaceBetween = gap;
+        fitWholeCards(swiperEl, gap);
         swiper.update();
       });
     });

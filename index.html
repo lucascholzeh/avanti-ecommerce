@@ -87,7 +87,7 @@
 
         <nav aria-label="Categorias de produtos" class="relative lg:mt-[22px]">
           <!-- No mobile a barra de categorias vira o menu hambúrguer, então a lista fica oculta (os painéis abaixo continuam sendo abertos pelo hambúrguer). -->
-          <ul class="hidden items-start gap-[24px] overflow-x-auto whitespace-nowrap pb-[4px] lg:flex lg:gap-[45px] lg:whitespace-normal lg:pb-0">
+          <ul class="no-scrollbar hidden items-start gap-[24px] overflow-x-auto whitespace-nowrap pb-[4px] lg:flex lg:gap-[45px] lg:whitespace-normal lg:pb-0">
             <li>
               <button type="button" aria-expanded="false" aria-controls="mega-menu" data-megamenu-toggle class="flex items-center gap-[8px] whitespace-nowrap text-[14px] font-bold leading-[22px]">
                 <img src="assets/icons/icon-menu-hamburger.svg" alt="" aria-hidden="true" class="h-[10px] w-[14px]" />
@@ -245,7 +245,9 @@
       </div>
     </section>
 
-    <section aria-labelledby="launches-title-1" class="lp-shift mx-auto mt-[48px] max-w-[1260px] px-[16px] lg:mt-[97px] min-[1300px]:px-0">
+    <!-- No mobile o carrossel do Figma começa em x=9 (padding lateral ~9px), o que
+         é o que permite caber 2 cards de 181px em 390px; no desktop volta a px-16. -->
+    <section aria-labelledby="launches-title-1" class="lp-shift mx-auto mt-[48px] max-w-[1260px] px-[9px] lg:mt-[97px] lg:px-[16px] min-[1300px]:px-0">
       <header class="flex items-center justify-between">
         <h2 id="launches-title-1" class="text-[16px] font-bold leading-[27px]">Lançamentos</h2>
         <a href="#" class="text-[14px] font-bold leading-[20px] underline text-grey-darkest">Ver mais</a>
