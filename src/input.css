@@ -45,6 +45,21 @@
     }
   }
 
+  /* Preço antigo "riscado" com a linha um pouco ABAIXO do meio (a 60% da altura
+     do item, em vez dos ~50% do line-through nativo). Desenhamos a linha com um
+     gradiente de fundo de 1px em 60% e removemos o text-decoration padrão. */
+  .strike-60 {
+    text-decoration: none;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 53%,
+      currentColor 53%,
+      currentColor calc(53% + 1px),
+      transparent calc(53% + 1px)
+    );
+    background-repeat: no-repeat;
+  }
+
   /* Bullets da paginação dos carrosséis (7px, cores do Figma).
      Classes simples porque o Swiper monta seletores a partir delas. */
   .carousel-bullet {
@@ -58,6 +73,13 @@
   /* O ícone de seta (PNG preto) usado no departamento ativo do mega menu
      precisa ficar azul (#005CFF); recolorimos via filtro. */
   .chevron-blue {
+    filter: invert(23%) sepia(97%) saturate(6083%) hue-rotate(213deg) brightness(101%) contrast(105%);
+  }
+
+  /* Quando "Todas as Categorias" está aberto (recebe .text-primary via JS),
+     o ícone hambúrguer dentro dele também fica azul (#005CFF) via filtro,
+     já que <img> não herda a cor do texto. */
+  [data-megamenu-toggle].text-primary img {
     filter: invert(23%) sepia(97%) saturate(6083%) hue-rotate(213deg) brightness(101%) contrast(105%);
   }
 

@@ -18,14 +18,14 @@
 </head>
 <body class="overflow-x-hidden bg-white font-sans text-black antialiased">
   <header class="relative z-20">
-    <p class="text-center min-h-[30px] px-[40px] pt-[6px] pb-[16px] border border-black bg-primary text-[14px] font-bold font-sans leading-[24px] text-white lg:px-[24px] lg:pt-[4px] lg:pb-[16px] lg:leading-[22px]">
+    <p class="text-center min-h-[30px] px-[40px] pt-[6px] pb-[16px] border border-black bg-primary text-[14px] font-bold leading-[24px] text-white lg:flex lg:min-h-[36px] lg:items-center lg:justify-center lg:p-0 lg:font-bold lg:leading-[22px]">
       Ganhe
-      <mark class="inline-block rounded-[4px] bg-coupon-purple px-[5px] py-[1px] text-[14px] leading-tight text-white">
+      <mark class="inline-block rounded-[4px] bg-coupon-purple px-[5px] py-[1px] text-[14px] leading-tight text-white lg:mx-[0.25em] lg:px-[0.25em] lg:py-0 lg:font-sans lg:leading-[16px]">
         R$10,00
       </mark>
       de desconto no seu primeiro pedido.
-      <span class="whitespace-nowrap">
-        Utilize o cupom <span class="font-normal">DESCONTO10</span>
+      <span class="whitespace-nowrap lg:ml-[0.25em]">
+        Utilize o cupom <span class="font-normal lg:font-bold">DESCONTO10</span>
       </span>
     </p>
 
@@ -34,12 +34,13 @@
         <div class="flex flex-wrap items-center pt-[10px] lg:h-[40px] lg:flex-nowrap">
           <!-- Zona esquerda (mobile): cresce igual à direita p/ centralizar o logo no viewport. -->
           <div class="flex grow basis-0 lg:grow-0 lg:basis-auto">
-            <!-- Hambúrguer: só no mobile. Reaproveita o toggle do mega menu (o JS aceita vários toggles p/ o mesmo painel). -->
-            <button type="button" aria-expanded="false" aria-controls="mega-menu" data-megamenu-toggle aria-label="Abrir menu de categorias" class="flex shrink-0 flex-col justify-between lg:hidden" style="height: 22px; width: 26px;">
-              <span aria-hidden="true" class="h-[2px] w-full rounded-full bg-black"></span>
-              <span aria-hidden="true" class="h-[2px] w-full rounded-full bg-black"></span>
-              <span aria-hidden="true" class="h-[2px] w-full rounded-full bg-black"></span>
-            </button>
+            <!-- Hambúrguer: só no mobile e apenas decorativo (não abre nada). Por isso
+                 é uma div sem interação e aria-hidden — não reaproveita o toggle do mega menu. -->
+            <div aria-hidden="true" class="flex shrink-0 flex-col justify-between lg:hidden" style="height: 22px; width: 26px;">
+              <span class="h-[2px] w-full rounded-full bg-black"></span>
+              <span class="h-[2px] w-full rounded-full bg-black"></span>
+              <span class="h-[2px] w-full rounded-full bg-black"></span>
+            </div>
           </div>
 
           <!-- Logo centralizado no mobile, à esquerda no desktop. As laterais (hambúrguer
@@ -73,13 +74,15 @@
           <!-- Zona direita (mobile): espelha a esquerda (grow/basis-0) e alinha o carrinho à
                direita, mantendo o logo no centro exato do viewport. -->
           <div class="flex grow basis-0 justify-end lg:grow-0 lg:basis-auto">
-          <!-- Carrinho: ícone icon-cart.svg (com rodas) + badge icon-cart-badge.svg (elipse azul).
+          <!-- Carrinho: ícone diferente por breakpoint (icon-cart-mobile.png no mobile,
+               icon-cart-desktop.svg no desktop) + badge icon-cart-badge.svg (elipse azul).
                No mobile o badge é achatado/vertical (~21×26); no desktop é circular (21×21). -->
           <a href="#" aria-label="Carrinho de compras, 2 itens" class="relative ml-0 lg:ml-[24px]">
-            <img src="assets/icons/icon-cart.png" alt="" aria-hidden="true" class="h-[24px] w-[25px]" />
-            <span aria-hidden="true" class="absolute -right-[11px] -top-[12px] flex h-[26px] w-[21px] items-start justify-center pt-[4px] lg:-right-[9px] lg:-top-[9px] lg:h-[21px] lg:w-[21px] lg:items-center lg:pt-0">
+            <img src="assets/icons/icon-cart-mobile.png" alt="" aria-hidden="true" class="h-[24px] w-[25px] lg:hidden" />
+            <img src="assets/icons/icon-cart-desktop.svg" alt="" aria-hidden="true" class="hidden h-[24px] w-[25px] lg:block" />
+            <span aria-hidden="true" class="absolute -right-[11px] -top-[12px] flex h-[26px] w-[21px] items-start justify-center pt-[4px] lg:-right-[18px] lg:-top-[9px] lg:h-[21px] lg:w-[21px] lg:items-center lg:pt-0">
               <img src="assets/icons/icon-cart-badge.svg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full" />
-              <span class="relative font-sans text-[12px] leading-[14px] text-white">2</span>
+              <span class="relative font-sans text-[12px] leading-[14px] text-white lg:font-bold">2</span>
             </span>
           </a>
           </div>
@@ -89,7 +92,7 @@
           <!-- No mobile a barra de categorias vira o menu hambúrguer, então a lista fica oculta (os painéis abaixo continuam sendo abertos pelo hambúrguer). -->
           <ul class="no-scrollbar hidden items-start gap-[24px] overflow-x-auto whitespace-nowrap pb-[4px] lg:flex lg:gap-[45px] lg:whitespace-normal lg:pb-0">
             <li>
-              <button type="button" aria-expanded="false" aria-controls="mega-menu" data-megamenu-toggle class="flex items-center gap-[8px] whitespace-nowrap text-[14px] font-bold leading-[22px]">
+              <button type="button" aria-expanded="false" aria-controls="mega-menu" data-megamenu-toggle data-always-bold class="flex items-center gap-[8px] whitespace-nowrap text-[14px] font-bold">
                 <img src="assets/icons/icon-menu-hamburger.svg" alt="" aria-hidden="true" class="h-[10px] w-[14px]" />
                 Todas as Categorias
               </button>
@@ -104,24 +107,36 @@
             <li><button type="button" aria-expanded="false" aria-controls="dept-menu" data-dept-toggle class="whitespace-nowrap text-[14px] leading-[22px]">Departamento</button></li>
           </ul>
 
-          <div id="mega-menu" hidden data-megamenu class="absolute left-0 top-[calc(100%+20px)] z-30 w-full bg-white shadow-megamenu lg:h-[329px] lg:max-w-[1261px]">
-            <div class="absolute left-0 top-0 hidden h-full w-[234px] bg-grey-light lg:block"></div>
-            <div class="absolute left-[234px] top-[20px] hidden h-[298px] w-px bg-grey-medium lg:block"></div>
+          <div id="mega-menu" hidden data-megamenu class="absolute left-0 top-[calc(100%+2px)] z-50 w-full shadow-megamenu bg-white lg:mt-2 lg:h-[329px] lg:max-w-[1261px]">
+            <div class="absolute left-0 top-0 hidden h-full w-[234px] bg-[#F5F5F5] lg:block"></div>
 
-            <ul class="flex flex-col gap-[12px] p-[16px] lg:absolute lg:left-[16px] lg:top-[20px] lg:w-[190px] lg:p-0">
-              <li><a href="#" class="flex items-center justify-between text-[14px] font-bold leading-[normal] text-primary">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px] chevron-blue" /></a></li>
-              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
-              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
-              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
-              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
-              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
-              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
-              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
-              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
-              <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
-            </ul>
+            <!-- Lista de Departamentos com scrollbar CUSTOM (js/dept-scroll.js): a barra
+                 nativa é escondida (.no-scrollbar) e desenhamos um trilho fino + thumb,
+                 idêntico em qualquer navegador (fino, sem setas, começa no topo). -->
+            <div data-dept-scroll class="lg:absolute lg:left-[16px] lg:top-[16px] lg:bottom-[16px] lg:w-[202px]">
+              <ul class="no-scrollbar flex flex-col gap-[12px] p-[16px] lg:gap-[12px] lg:p-0 lg:pb-[12px] lg:pr-[16px] lg:h-full lg:overflow-y-auto">
+                <li><a href="#" class="flex items-center justify-between text-[14px] font-bold leading-[normal] text-primary">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px] chevron-blue" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+                <li><a href="#" class="flex items-center justify-between text-[14px] leading-[normal] text-grey-darkest">Departamento <img src="assets/icons/icon-chevron-right.png" alt="" aria-hidden="true" class="h-[8px] w-[5px]" /></a></li>
+              </ul>
+              <!-- Trilho + thumb da barra custom (só desktop; JS calcula proporção e posição). -->
+              <div data-dept-scroll-track aria-hidden="true" class="pointer-events-none absolute right-0 top-0 hidden h-full w-[4px] rounded-full bg-[#F0F0F0] lg:block">
+                <div data-dept-scroll-thumb class="pointer-events-auto absolute right-0 top-0 w-full rounded-full bg-[#b3b3b3]"></div>
+              </div>
+            </div>
 
-            <ul class="absolute left-[268px] top-[18px] hidden flex-col gap-[12px] lg:flex">
+            <ul class="absolute left-[268px] top-[16px] hidden flex-col gap-[8px] lg:flex">
               <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
@@ -132,7 +147,7 @@
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
             </ul>
 
-            <ul class="absolute left-[458px] top-[18px] hidden flex-col gap-[12px] lg:flex">
+            <ul class="absolute left-[458px] top-[16px] hidden flex-col gap-[8px] lg:flex">
               <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
@@ -143,7 +158,7 @@
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
             </ul>
 
-            <ul class="absolute left-[648px] top-[18px] hidden flex-col gap-[12px] lg:flex">
+            <ul class="absolute left-[648px] top-[16px] hidden flex-col gap-[8px] lg:flex">
               <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
               <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
@@ -157,7 +172,7 @@
             <a href="#" class="absolute left-[1001px] top-[20px] hidden h-[298px] w-[236px] overflow-hidden rounded-[10px] lg:block">
               <img src="assets/images/megamenu-promo.png" alt="Caneca preta Avanti sobre tábua de madeira" class="absolute inset-0 h-full w-full object-cover" />
               <img src="assets/icons/megamenu-promo-overlay.svg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full" />
-              <p class="absolute left-[27px] top-[44px] text-[24px] leading-[27px] text-white">Confira os<br />Produtos<br /><strong class="font-bold">Que acabaram<br />De chegar</strong></p>
+              <p class="absolute left-[27px] top-[44px] text-[24px] leading-[27px] text-white">Confira os<br />Produtos<br /><strong class="font-bold">Que<br />acabaram<br />De chegar</strong></p>
               <span class="absolute left-[27px] top-[213px] flex h-[38px] w-[116px] items-center justify-center font-sans text-[12px] font-bold uppercase text-white">
                 <img src="assets/icons/megamenu-vertodos-pill.svg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full" />
                 <span class="relative">ver todos</span>
@@ -165,11 +180,14 @@
             </a>
           </div>
 
-          <div id="dept-menu" hidden data-dept-menu class="absolute left-0 top-[calc(100%+20px)] z-30 w-full bg-white shadow-megamenu lg:h-[329px] lg:max-w-[1261px]">
-            <h2 class="px-[16px] pt-[16px] text-[16px] font-bold leading-[normal] text-black lg:absolute lg:left-[16px] lg:top-[20px] lg:p-0">Departamento</h2>
-            <ul class="flex flex-col gap-[12px] p-[16px] pt-0 lg:absolute lg:left-[16px] lg:top-[57px] lg:flex-row lg:gap-[30px] lg:p-0">
+          <div id="dept-menu" hidden data-dept-menu class="absolute left-0 top-[calc(100%+2px)] z-50 w-full bg-white shadow-megamenu lg:h-[329px] lg:max-w-[1261px]">
+            <div class="flex items-baseline gap-[16px] px-[16px] pt-[16px] lg:absolute lg:left-[16px] lg:top-[20px] lg:gap-[70px] lg:p-0">
+              <h2 class="text-[16px] font-bold leading-[normal] text-black">Departamento</h2>
+              <span class="text-[12px] font-bold leading-[normal] text-primary">Ver tudo</span>
+            </div>
+            <ul class="flex flex-col gap-[12px] p-[16px] pt-0 lg:absolute lg:left-[16px] lg:top-[54px] lg:flex-row lg:gap-[30px] lg:p-0">
               <li class="lg:w-[160px]">
-                <ul class="flex flex-col gap-[12px]">
+                <ul class="flex flex-col gap-[12px] lg:gap-[6px]">
                   <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
                   <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
                   <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
@@ -181,7 +199,7 @@
                 </ul>
               </li>
               <li class="lg:w-[160px]">
-                <ul class="flex flex-col gap-[12px]">
+                <ul class="flex flex-col gap-[12px] lg:gap-[6px]">
                   <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
                   <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
                   <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
@@ -193,7 +211,7 @@
                 </ul>
               </li>
               <li class="lg:w-[160px]">
-                <ul class="flex flex-col gap-[12px]">
+                <ul class="flex flex-col gap-[12px] lg:gap-[6px]">
                   <li><a href="#" class="text-[14px] font-bold leading-[normal] text-primary">Categoria</a></li>
                   <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
                   <li><a href="#" class="text-[14px] leading-[normal] text-grey-dark">Categoria</a></li>
@@ -209,7 +227,7 @@
             <a href="#" class="absolute left-[1001px] top-[20px] hidden h-[298px] w-[236px] overflow-hidden rounded-[10px] lg:block">
               <img src="assets/images/megamenu-promo.png" alt="Caneca preta Avanti sobre tábua de madeira" class="absolute inset-0 h-full w-full object-cover" />
               <img src="assets/icons/megamenu-promo-overlay.svg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full" />
-              <p class="absolute left-[27px] top-[44px] text-[24px] leading-[27px] text-white">Confira os<br />Produtos<br /><strong class="font-bold">Que acabaram<br />De chegar</strong></p>
+              <p class="absolute left-[27px] top-[44px] text-[24px] leading-[27px] text-white">Confira os<br />Produtos<br /><strong class="font-bold">Que<br />acabaram<br />De chegar</strong></p>
               <span class="absolute left-[27px] top-[213px] flex h-[38px] w-[116px] items-center justify-center font-sans text-[12px] font-bold uppercase text-white">
                 <img src="assets/icons/megamenu-vertodos-pill.svg" alt="" aria-hidden="true" class="absolute inset-0 h-full w-full" />
                 <span class="relative">ver todos</span>
@@ -226,10 +244,10 @@
          texto em INGLÊS e SEM sombra (a sombra só existe no desktop). -->
     <section aria-labelledby="hero-title" class="bg-hero-grey">
       <div class="relative mx-auto flex h-[306px] max-w-[1920px] flex-row items-center overflow-hidden lg:h-[510px] lg:justify-center lg:gap-[4%] min-[1400px]:gap-[87px] min-[1920px]:justify-start min-[1920px]:pl-[305px]">
-        <img src="assets/images/hero-supersale.png" alt="Pilha de roupas dobradas sobre uma cadeira branca" class="h-full w-[57.7%] shrink-0 object-cover object-[82%_100%] mix-blend-darken lg:h-[510px] lg:w-[685px] lg:max-w-[685px] lg:object-cover lg:object-bottom" />
+        <img src="assets/images/hero-supersale.png" alt="Pilha de roupas dobradas sobre uma cadeira branca" class="h-full w-[57.7%] shrink-0 object-cover object-[78%_100%] mix-blend-darken lg:h-[510px] lg:w-[685px] lg:max-w-[685px] lg:object-cover lg:object-bottom" />
         <div class="flex w-[42.3%] flex-col items-center gap-[12px] pr-[8px] lg:w-[576px] lg:px-0 lg:py-0">
           <h1 id="hero-title" class="text-center font-nunito uppercase leading-none text-black lg:text-[100px] lg:leading-[normal] lg:[text-shadow:0_4px_4px_rgba(0,0,0,0.25)]">
-            <strong class="block text-[40px] font-bold leading-[40px] lg:inline lg:leading-[normal]">super</strong><span class="block text-[40px] font-light leading-[40px] lg:inline lg:leading-[normal]">sale</span>
+            <strong class="block text-[40px] font-bold leading-[40px] lg:inline lg:text-[100px] lg:leading-[normal]">super</strong><span class="block text-[40px] font-light leading-[40px] lg:inline lg:text-[100px] lg:leading-[normal]">sale</span>
           </h1>
           <p class="whitespace-nowrap text-center font-nunito text-[12px] font-bold uppercase leading-[normal] tracking-[normal] text-primary lg:text-[25px] lg:tracking-[7.5px] lg:[text-shadow:0_4px_4px_rgba(0,0,0,0.25)]">
             <span class="lg:hidden">Selected items up to</span><span class="hidden lg:inline">Itens selecionados com até</span>
@@ -238,9 +256,10 @@
         </div>
         <!-- Dots do carrossel de banner (decorativos no mobile, conforme Figma). -->
         <div aria-hidden="true" class="absolute bottom-[16px] left-1/2 flex -translate-x-1/2 items-center gap-[7px] lg:hidden">
-          <span class="h-[7px] w-[7px] rounded-full bg-dot-inactive"></span>
-          <span class="h-[7px] w-[7px] rounded-full bg-dot-inactive"></span>
           <span class="h-[7px] w-[7px] rounded-full bg-grey-darkest"></span>
+          <span class="h-[7px] w-[7px] rounded-full bg-dot-inactive"></span>
+          <span class="h-[7px] w-[7px] rounded-full bg-dot-inactive"></span>
+
         </div>
       </div>
     </section>
@@ -249,18 +268,28 @@
          é o que permite caber 2 cards de 181px em 390px; no desktop volta a px-16. -->
     <section aria-labelledby="launches-title-1" class="lp-shift mx-auto mt-[48px] max-w-[1260px] px-[9px] lg:mt-[97px] lg:px-[16px] min-[1300px]:px-0">
       <header class="flex items-center justify-between">
-        <h2 id="launches-title-1" class="text-[16px] font-bold leading-[27px]">Lançamentos</h2>
-        <a href="#" class="text-[14px] font-bold leading-[20px] underline text-grey-darkest">Ver mais</a>
+        <h2 id="launches-title-1" class="text-[16px] font-bold leading-[27px] lg:text-[20px]">Lançamentos</h2>
+        <span class="text-[14px] font-bold leading-[20px] underline text-grey-darkest lg:no-underline">Ver mais</span>
       </header>
       <div data-carousel="lancamentos-1" class="relative mt-[19px]">
         <div class="swiper">
           <ul class="swiper-wrapper"><!-- slides renderizados por js/carousel.js a partir de js/config.js --></ul>
         </div>
-        <button type="button" aria-label="Produtos anteriores" data-carousel-prev class="absolute -left-[10px] top-[189px] z-10 hidden h-[38px] w-[38px] lg:block lg:-left-[19px]">
-          <img src="assets/icons/icon-arrow-prev.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none" />
+        <!-- Seta = 2 elementos independentes (círculo + seta) para poder sombrear
+             cada parte separadamente. No 1º carrossel a seta ESQUERDA tem sombra
+             no círculo E na seta; a DIREITA, só no círculo. O círculo tem 30px
+             e fica INTEIRO fora do card, encostado na borda (-left/-right-[30px]). -->
+        <button type="button" aria-label="Produtos anteriores" data-carousel-prev class="absolute -left-[30px] top-[193px] z-10 hidden h-[30px] w-[30px] lg:block">
+          <span class="absolute inset-0 rounded-full border border-primary bg-white drop-shadow-[0_3px_2px_rgba(0,0,0,0.25)]"></span>
+          <svg viewBox="0 0 30 30" fill="none" aria-hidden="true" class="absolute inset-0 h-[30px] w-[30px] drop-shadow-[0_3px_3px_rgba(0,0,0,0.35)]">
+            <path d="M19.5335 11L18.1054 12.4186L21.2033 15.5165H13V17.5189H21.2033L18.1054 20.6169L19.5335 22.0354L25.0386 16.5177L19.5335 11Z" fill="#005CFF" transform="translate(34.02,-1.52) scale(-1,1)" />
+          </svg>
         </button>
-        <button type="button" aria-label="Próximos produtos" data-carousel-next class="absolute -right-[10px] top-[189px] z-10 hidden h-[38px] w-[38px] lg:block lg:-right-[19px]">
-          <img src="assets/icons/icon-arrow-next.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none" />
+        <button type="button" aria-label="Próximos produtos" data-carousel-next class="absolute -right-[30px] top-[193px] z-10 hidden h-[30px] w-[30px] lg:block">
+          <span class="absolute inset-0 rounded-full border border-primary bg-white drop-shadow-[0_3px_2px_rgba(0,0,0,0.25)]"></span>
+          <svg viewBox="0 0 30 30" fill="none" aria-hidden="true" class="absolute inset-0 h-[30px] w-[30px]">
+            <path d="M19.5335 11L18.1054 12.4186L21.2033 15.5165H13V17.5189H21.2033L18.1054 20.6169L19.5335 22.0354L25.0386 16.5177L19.5335 11Z" fill="#005CFF" transform="translate(-4.02,-1.52)" />
+          </svg>
         </button>
         <div data-carousel-pagination class="mt-[16px] flex h-[7px] items-center justify-center gap-[7px]"></div>
       </div>
@@ -294,25 +323,25 @@
          título centralizado, 3 pins (círculo 60px + texto x=93 alinhado ao topo). Desktop: texto esq / imagem dir. -->
     <section aria-labelledby="features-title" class="relative mt-[48px] bg-band-grey lg:mt-[76px]">
       <div class="mx-auto flex max-w-[1260px] flex-col overflow-hidden px-[19px] pb-[28px] pt-[28px] lg:h-[825px] lg:flex-row lg:items-start lg:justify-center lg:gap-[49px] lg:px-[16px] lg:py-0">
-        <div class="order-last w-full shrink-0 lg:order-none lg:mt-[142px] lg:w-[476px]">
+        <div class="order-last w-full shrink-0 lg:order-none lg:text-[#4F4F4F] lg:mt-[142px] lg:w-[476px]">
           <h2 id="features-title" class="mt-[21px] text-center font-nunito text-[20px] font-bold uppercase leading-[1.4] tracking-[0.8px] lg:mt-0 lg:text-[30px] lg:tracking-[1.2px]">Lorem ipsum</h2>
-          <ul class="mt-[21px] flex flex-col gap-[29px] lg:mt-[50px] lg:gap-[50px]">
-            <li class="flex items-start gap-[14px] lg:gap-[23px]">
+          <ul class="mt-[21px] flex flex-col gap-[29px]  lg:mt-[50px] lg:gap-[50px]">
+            <li class="mx-auto flex w-fit items-start gap-[14px] lg:mx-0 lg:w-auto lg:gap-[23px]">
               <img src="assets/icons/icon-map-pin-1.svg" alt="" aria-hidden="true" class="h-[60px] w-[60px] shrink-0 lg:mt-[12px] lg:h-[90px] lg:w-[90px]" />
               <p class="w-[276px] font-nunito text-[12px] font-normal leading-[1.4] tracking-[0.6px] [text-shadow:0_4px_4px_rgba(0,0,0,0.25)] lg:w-[360px] lg:text-[18px] lg:tracking-[0.9px] lg:[text-shadow:none]">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
             </li>
-            <li class="flex items-start gap-[14px] lg:gap-[23px]">
+            <li class="mx-auto flex w-fit items-start gap-[14px] lg:mx-0 lg:w-auto lg:gap-[23px]">
               <img src="assets/icons/icon-map-pin-2.svg" alt="" aria-hidden="true" class="h-[60px] w-[60px] shrink-0 lg:mt-[12px] lg:h-[90px] lg:w-[90px]" />
               <p class="w-[276px] font-nunito text-[12px] font-normal leading-[1.4] tracking-[0.6px] [text-shadow:0_4px_4px_rgba(0,0,0,0.25)] lg:w-[360px] lg:text-[18px] lg:tracking-[0.9px] lg:[text-shadow:none]">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
             </li>
-            <li class="flex items-start gap-[14px] lg:gap-[23px]">
+            <li class="mx-auto flex w-fit items-start gap-[14px] lg:mx-0 lg:w-auto lg:gap-[23px]">
               <img src="assets/icons/icon-map-pin-3.svg" alt="" aria-hidden="true" class="h-[60px] w-[60px] shrink-0 lg:mt-[12px] lg:h-[90px] lg:w-[90px]" />
               <p class="w-[276px] font-nunito text-[12px] font-normal leading-[1.4] tracking-[0.6px] [text-shadow:0_4px_4px_rgba(0,0,0,0.25)] lg:w-[360px] lg:text-[18px] lg:tracking-[0.9px] lg:[text-shadow:none]">Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
             </li>
           </ul>
         </div>
         <!-- Mobile: imagem quadrada 349×349 centralizada. Desktop: 652×728 com sangria lateral. -->
-        <div class="relative order-first mx-auto aspect-square w-[349px] max-w-full shrink-0 overflow-hidden lg:order-none lg:mx-0 lg:mt-[97px] lg:aspect-[652/728] lg:h-[728px] lg:w-[652px]">
+        <div class="relative order-first mx-auto aspect-square w-[349px] max-w-full shrink-0 overflow-hidden lg:order-none lg:mx-0 lg:mt-[70px] lg:aspect-[652/728] lg:h-[728px] lg:w-[652px]">
           <img src="assets/images/banner-mug-board.png" alt="Caneca preta Avanti sobre tábua de madeira na cozinha" class="absolute left-[-5.84%] top-0 h-full w-[111.68%] max-w-none object-cover lg:left-[-5.84%]" />
         </div>
       </div>
@@ -344,17 +373,25 @@
     <section aria-labelledby="launches-title-2" class="mx-auto mt-[48px] hidden max-w-[1260px] px-[16px] lg:mt-[64px] lg:block min-[1300px]:px-0">
       <header class="flex items-center justify-between">
         <h2 id="launches-title-2" class="text-[20px] font-bold leading-[27px]">Lançamentos</h2>
-        <a href="#" class="text-[14px] font-bold leading-[20px] text-grey-darkest">Ver mais</a>
+        <span class="text-[14px] font-bold leading-[20px] text-grey-darkest">Ver mais</span>
       </header>
       <div data-carousel="lancamentos-2" class="relative mt-[19px]">
         <div class="swiper">
           <ul class="swiper-wrapper"><!-- slides renderizados por js/carousel.js a partir de js/config.js --></ul>
         </div>
-        <button type="button" aria-label="Produtos anteriores" data-carousel-prev class="absolute -left-[10px] top-[189px] z-10 hidden h-[38px] w-[38px] lg:block lg:-left-[19px]">
-          <img src="assets/icons/icon-arrow-prev.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none" />
+        <!-- No 2º carrossel a sombra fica SÓ no círculo (fora), nos dois botões.
+             Círculo de 30px no meio da borda (-left/-right-[15px]). -->
+        <button type="button" aria-label="Produtos anteriores" data-carousel-prev class="absolute -left-[15px] top-[193px] z-10 hidden h-[30px] w-[30px] lg:block">
+          <span class="absolute inset-0 rounded-full border border-primary bg-white drop-shadow-[0_3px_2px_rgba(0,0,0,0.25)]"></span>
+          <svg viewBox="0 0 30 30" fill="none" aria-hidden="true" class="absolute inset-0 h-[30px] w-[30px]">
+            <path d="M19.5335 11L18.1054 12.4186L21.2033 15.5165H13V17.5189H21.2033L18.1054 20.6169L19.5335 22.0354L25.0386 16.5177L19.5335 11Z" fill="#005CFF" transform="translate(34.02,-1.52) scale(-1,1)" />
+          </svg>
         </button>
-        <button type="button" aria-label="Próximos produtos" data-carousel-next class="absolute -right-[10px] top-[189px] z-10 hidden h-[38px] w-[38px] lg:block lg:-right-[19px]">
-          <img src="assets/icons/icon-arrow-next.svg" alt="" aria-hidden="true" class="h-[38px] w-[38px] max-w-none" />
+        <button type="button" aria-label="Próximos produtos" data-carousel-next class="absolute -right-[15px] top-[193px] z-10 hidden h-[30px] w-[30px] lg:block">
+          <span class="absolute inset-0 rounded-full border border-primary bg-white drop-shadow-[0_3px_2px_rgba(0,0,0,0.25)]"></span>
+          <svg viewBox="0 0 30 30" fill="none" aria-hidden="true" class="absolute inset-0 h-[30px] w-[30px]">
+            <path d="M19.5335 11L18.1054 12.4186L21.2033 15.5165H13V17.5189H21.2033L18.1054 20.6169L19.5335 22.0354L25.0386 16.5177L19.5335 11Z" fill="#005CFF" transform="translate(-4.02,-1.52)" />
+          </svg>
         </button>
         <div data-carousel-pagination class="mt-[16px] flex h-[7px] items-center justify-center gap-[7px]"></div>
       </div>
@@ -367,8 +404,8 @@
     </section>
 
     <section aria-labelledby="newsletter-title" class="mx-auto mt-[48px] max-w-[1260px] px-[16px] lg:mt-[67px] min-[1300px]:px-0">
-      <h2 id="newsletter-title" class="text-center text-[16px] font-bold leading-[27px]">Cadastre-se na nossa <span class="text-primary">newsletter</span></h2>
-      <form class="mt-[24px] flex flex-col gap-[20px] rounded-[8px] bg-grey-light px-[24px] py-[32px] lg:h-[176px] lg:flex-row lg:items-center lg:gap-[24px] lg:p-0 lg:pl-[114px]">
+      <h2 id="newsletter-title" class="text-center text-[16px] font-bold leading-[27px] lg:text-[20px]">Cadastre-se na nossa <span class="text-primary">newsletter</span></h2>
+      <form class="mt-[24px] flex flex-col gap-[20px] rounded-[8px] bg-[#DEDEDE] px-[24px] py-[32px] lg:h-[176px] lg:flex-row lg:items-center lg:gap-[24px] lg:p-0 lg:pl-[114px]">
         <div>
           <label for="newsletter-name" class="sr-only">Digite seu nome</label>
           <input id="newsletter-name" type="text" placeholder="Digite seu nome" autocomplete="name" class="h-[48px] w-full rounded-[8px] bg-white pl-[24px] text-[14px] text-grey-darkest outline-none placeholder:text-grey-darkest lg:w-[280px]" />
@@ -387,11 +424,12 @@
   </main>
 
   <footer class="mt-[48px] lg:mt-[79px]">
-    <div class="bg-grey-light">
+    <div class="bg-[#F5F5F5]">
       <div class="lp-shift-footer flex max-w-[1157px] flex-col items-center gap-[40px] px-[24px] py-[40px] lg:items-stretch lg:gap-[48px] lg:px-0 lg:py-[64px]">
         <div class="flex w-full flex-col items-center gap-y-0 lg:flex-row lg:items-start lg:justify-between lg:gap-[40px]">
           <div class="flex flex-col items-center gap-[40px] lg:mb-0 lg:items-start">
             <img src="assets/icons/logo-avanti-footer.svg" alt="Avanti" class="h-[27px] w-[152px]" />
+            <p class="hidden text-[14px] font-bold text-primary lg:block">SIGA NOSSAS REDES SOCIAIS</p>
             <ul class="flex h-[26px] items-center gap-[40px]">
               <li><a href="#" aria-label="Instagram"><img src="assets/icons/social-instagram.svg" alt="" aria-hidden="true" class="h-[19px] w-[19px]" /></a></li>
               <li><a href="#" aria-label="Facebook"><img src="assets/icons/social-facebook.svg" alt="" aria-hidden="true" class="h-[22px] w-[10px]" /></a></li>
@@ -404,12 +442,12 @@
                No desktop são colunas abertas. O prefixo literal é <h5> no mobile e <h4> no desktop. -->
           <section aria-label="Institucional" class="mt-[40px] w-full border-t border-grey-medium text-center lg:mt-0 lg:w-auto lg:border-0 lg:text-left" data-footer-acc>
             <h2>
-              <button type="button" aria-expanded="false" data-footer-toggle class="flex w-full items-center justify-center py-[16px] text-[16px] font-bold text-black lg:pointer-events-none lg:py-0 lg:text-[14px]">
+              <button type="button" aria-expanded="false" data-footer-toggle class="flex w-full items-center justify-center py-[16px] text-[16px] font-bold text-black lg:pointer-events-none lg:justify-start lg:py-0 lg:text-[14px]">
                 <span aria-hidden="true" class="mr-[4px] text-[12px] font-normal text-grey-dark lg:font-normal"><span class="lg:hidden">&lt;h5&gt;</span><span class="hidden lg:inline">&lt;h4&gt;</span></span> Institucional
                 <svg aria-hidden="true" viewBox="0 0 8 12" fill="none" class="ml-auto h-[12px] w-[8px] rotate-90 text-primary transition-transform lg:hidden" data-footer-chevron><path d="M1.5 1L6.5 6L1.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
               </button>
             </h2>
-            <ul class="hidden pb-[16px] lg:mt-[11px] lg:block lg:pb-0" data-footer-panel>
+            <ul class="hidden pb-[16px] text-left lg:mt-[11px] lg:block lg:pb-0" data-footer-panel>
               <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Sobre Nós</a></li>
               <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Nossas Lojas</a></li>
               <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Privacidade e Segurança</a></li>
@@ -419,12 +457,12 @@
 
           <section aria-label="Central de ajuda" class="w-full border-t border-grey-medium text-center lg:w-auto lg:border-0 lg:text-left" data-footer-acc>
             <h2>
-              <button type="button" aria-expanded="false" data-footer-toggle class="flex w-full items-center justify-center py-[16px] text-[16px] font-bold text-black lg:pointer-events-none lg:py-0 lg:text-[14px]">
+              <button type="button" aria-expanded="false" data-footer-toggle class="flex w-full items-center justify-center py-[16px] text-[16px] font-bold text-black lg:pointer-events-none lg:justify-start lg:py-0 lg:text-[14px]">
                 <span aria-hidden="true" class="mr-[4px] text-[12px] font-normal text-grey-dark"><span class="lg:hidden">&lt;h5&gt;</span><span class="hidden lg:inline">&lt;h4&gt;</span></span> Central de ajuda
                 <svg aria-hidden="true" viewBox="0 0 8 12" fill="none" class="ml-auto h-[12px] w-[8px] rotate-90 text-primary transition-transform lg:hidden" data-footer-chevron><path d="M1.5 1L6.5 6L1.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
               </button>
             </h2>
-            <ul class="hidden pb-[16px] lg:mt-[11px] lg:block lg:pb-0" data-footer-panel>
+            <ul class="hidden pb-[16px] text-left lg:mt-[11px] lg:block lg:pb-0" data-footer-panel>
               <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Fale Conosco</a></li>
               <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Frete e Entrega</a></li>
               <li><a href="#" class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> Trocas e Devoluções</a></li>
@@ -435,12 +473,12 @@
 
           <section aria-label="Atendimento" class="w-full border-t border-grey-medium text-center lg:w-auto lg:border-0 lg:text-left" data-footer-acc>
             <h2>
-              <button type="button" aria-expanded="false" data-footer-toggle class="flex w-full items-center justify-center py-[16px] text-[16px] font-bold text-black lg:pointer-events-none lg:py-0 lg:text-[14px]">
+              <button type="button" aria-expanded="false" data-footer-toggle class="flex w-full items-center justify-center py-[16px] text-[16px] font-bold text-black lg:pointer-events-none lg:justify-start lg:py-0 lg:text-[14px]">
                 <span aria-hidden="true" class="mr-[4px] text-[12px] font-normal text-grey-dark"><span class="lg:hidden">&lt;h5&gt;</span><span class="hidden lg:inline">&lt;h4&gt;</span></span> Atendimento
                 <svg aria-hidden="true" viewBox="0 0 8 12" fill="none" class="ml-auto h-[12px] w-[8px] rotate-90 text-primary transition-transform lg:hidden" data-footer-chevron><path d="M1.5 1L6.5 6L1.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
               </button>
             </h2>
-            <address class="hidden not-italic pb-[16px] lg:mt-[11px] lg:block lg:pb-0" data-footer-panel>
+            <address class="hidden not-italic pb-[16px] text-left lg:mt-[11px] lg:block lg:pb-0" data-footer-panel>
               <p class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> <strong class="font-bold">Telefone:</strong> (00) 1234-5678</p>
               <p class="text-[14px] leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-[12px] font-bold text-grey-dark">&lt;h5&gt;</span> <strong class="font-bold">E-mail:</strong> exemplo@exemplo.com.br</p>
               <p class="text-[12px] font-bold leading-[28px] text-grey-darkest"><span aria-hidden="true" class="text-grey-dark">&lt;h5&gt;</span> Horário de atendimento:</p>
@@ -482,6 +520,7 @@
   <script src="js/config.js" defer></script>
   <script src="js/search.js" defer></script>
   <script src="js/megamenu.js" defer></script>
+  <script src="js/dept-scroll.js" defer></script>
   <script src="js/carousel.js" defer></script>
   <script src="js/footer-accordion.js" defer></script>
   <script src="js/main.js" defer></script>

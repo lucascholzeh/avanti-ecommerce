@@ -14,9 +14,28 @@ const AvantiMegaMenu = (() => {
     const toggles = Array.from(document.querySelectorAll(entry.toggleSelector));
     if (!panel || toggles.length === 0) return null;
 
-    const setOpen = (open) => {
+    /**
+     * Abre/fecha o painel. Quando abre, realça em azul (#005CFF) apenas o
+     * botão efetivamente clicado (activeToggle); os demais que compartilham
+     * o mesmo painel ficam neutros. Ao fechar, limpa todos.
+     * @param {boolean} open
+     * @param {Element} [activeToggle] Botão que disparou a abertura.
+     */
+    const setOpen = (open, activeToggle) => {
       panel.hidden = !open;
-      toggles.forEach((toggle) => toggle.setAttribute('aria-expanded', String(open)));
+      toggles.forEach((toggle) => {
+        const active = open && toggle === activeToggle;
+        toggle.setAttribute('aria-expanded', String(open));
+        // Item clicado: azul (#005CFF) + negrito enquanto o painel está aberto.
+        toggle.classList.toggle('text-primary', active);
+        // O negrito do realce só entra em botões que não são bold por padrão
+        // (ex.: "Departamento"). O "Todas as Categorias" já nasce bold (marcado
+        // com data-always-bold), então não mexemos nele — senão ao fechar ele
+        // perderia o bold original. Testamos a PRESENÇA do atributo (o valor é "").
+        if (!toggle.hasAttribute('data-always-bold')) {
+          toggle.classList.toggle('font-bold', active);
+        }
+      });
     };
 
     return {
@@ -24,7 +43,7 @@ const AvantiMegaMenu = (() => {
       toggles,
       close: () => setOpen(false),
       contains: (target) => panel.contains(target) || toggles.some((t) => t.contains(target)),
-      toggle: () => setOpen(panel.hidden)
+      toggle: (activeToggle) => setOpen(panel.hidden, activeToggle)
     };
   };
 
@@ -44,7 +63,7 @@ const AvantiMegaMenu = (() => {
       menu.toggles.forEach((toggle) => {
         toggle.addEventListener('click', () => {
           closeAllExcept(menu);
-          menu.toggle();
+          menu.toggle(toggle);
         });
       });
     });

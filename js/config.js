@@ -68,6 +68,7 @@ const AvantiConfig = {
       titleSuffix: '</h3>',
       oldPrice: 'R$ 100,00',
       discountTag: '10% off',
+      discountUrl: 'https://www.nike.com.br/air-max-1-86-027221.html?cor=51',
       price: 'R$79,90',
       installmentsPrefix: 'Ou em até ',
       installmentsValue: '10x de R$ 7,90',
@@ -75,11 +76,11 @@ const AvantiConfig = {
     },
 
     /**
-     * Um registro por carrossel da página. No Figma o 1º card do 1º carrossel
-     * usa o badge teal (texto na mesma cor); todos os demais usam navy.
+     * Um registro por carrossel da página. Todos os cards usam o badge "Novo"
+     * navy idêntico (o 1º card não é mais o teal-invisível do Figma desktop).
      */
     instances: [
-      { id: 'lancamentos-1', badgeVariants: ['teal', 'navy', 'navy', 'navy', 'navy'] },
+      { id: 'lancamentos-1', badgeVariants: ['navy', 'navy', 'navy', 'navy', 'navy'] },
       { id: 'lancamentos-2', badgeVariants: ['navy', 'navy', 'navy', 'navy', 'navy'] }
     ]
   }

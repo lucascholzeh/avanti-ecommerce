@@ -4,19 +4,16 @@
  * este arquivo só contém a lógica de montagem e navegação.
  */
 const AvantiCarousel = (() => {
-  // No desktop o 1º card do 1º carrossel usa o badge teal com texto na mesma cor
-  // (some de propósito, conforme o Figma desktop). No Figma MOBILE, porém, esse
-  // mesmo card aparece como "Novo" navy legível — então a variante teal cai para
-  // navy no mobile e só vira teal-invisível a partir de lg.
+  // Todos os cards usam o mesmo badge "Novo" navy (o 1º card não é mais o
+  // teal-invisível que o Figma desktop trazia).
   const BADGE_VARIANT_CLASSES = {
-    navy: 'bg-badge-navy text-white',
-    teal: 'bg-badge-navy text-white lg:bg-tag-teal lg:text-tag-teal'
+    navy: 'bg-badge-navy text-white'
   };
 
   /**
    * Monta o HTML de um card de produto do carrossel.
    * @param {Object} product Dados do produto (AvantiConfig.carousel.product).
-   * @param {'navy'|'teal'} badgeVariant Variante de cor do badge "Novo".
+   * @param {'navy'} badgeVariant Variante de cor do badge "Novo".
    * @returns {string} Markup do slide.
    */
   // Card em layout de fluxo (não absoluto) para escalar naturalmente entre o
@@ -27,21 +24,21 @@ const AvantiCarousel = (() => {
       <article class="flex h-full flex-col rounded-[10px] border border-grey-medium bg-white p-[8px]">
         <div class="relative">
           <img src="${product.image}" alt="${product.imageAlt}" class="aspect-square w-full object-cover" />
-          <span class="absolute left-0 top-[1px] rounded-[4px] px-[5px] pr-[12px] text-[10px] font-bold uppercase leading-[22px] lg:pr-[5px] ${BADGE_VARIANT_CLASSES[badgeVariant]}">${product.badgeLabel}</span>
+          <span class="absolute left-0 top-[1px] rounded-[4px] px-[5px] pr-[12px] text-[10px] font-bold uppercase leading-[22px] lg:font-normal lg:pr-[5px] ${BADGE_VARIANT_CLASSES[badgeVariant]}">${product.badgeLabel}</span>
         </div>
 
         <h3 class="mt-[10px] font-normal capitalize leading-[normal]">
           <span aria-hidden="true" class="text-[12px] font-bold lowercase text-grey-dark">${product.titlePrefix.replace('<', '&lt;').replace('>', '&gt;')}</span>
-          <span class="text-[14px] text-grey-darkest">${product.titleText}</span>
+          <span class="font-sans text-[14px] font-normal text-grey-darkest">${product.titleText}</span>
           <span aria-hidden="true" class="text-[12px] font-bold lowercase text-grey-dark">${product.titleSuffix.replace('<', '&lt;').replace('>', '&gt;')}</span>
         </h3>
 
-        <div class="mt-[10px] flex items-center ">
-          <s class="text-[12px] leading-[normal] text-grey-darkest">${product.oldPrice}</s>
-          <span class="mx-auto rounded-[4px] bg-tag-teal px-[8px] py-[4px] text-[11px] font-bold uppercase leading-[12px] text-white no-underline lg:mx-0 lg:underline">${product.discountTag}</span>
+        <div class="mt-[10px] lg:mt-[4px] flex items-center gap-[15px]">
+          <s class="strike-60 text-[12px] leading-[normal] text-grey-darkest">${product.oldPrice}</s>
+          <a href="${product.discountUrl}" target="_blank" rel="noopener" data-discount-link class="translate-y-[7px] rounded-[4px] bg-tag-teal px-[8px] py-[4px] text-[11px] font-bold uppercase leading-[12px] text-white lg:font-normal lg:underline">${product.discountTag}</a>
         </div>
         <strong class="text-[16px] font-bold leading-[normal] text-black">${product.price}</strong>
-        <p class="mt-[4px] text-[12px] leading-[normal] text-grey-darkest">${product.installmentsPrefix}<strong class="font-bold">${product.installmentsValue}</strong></p>
+        <p class="mt-[4px] lg:mb-[5px] text-[12px] leading-[normal] text-grey-darkest">${product.installmentsPrefix}<strong class="font-bold">${product.installmentsValue}</strong></p>
 
         <button type="button" class="mt-[10px] flex h-[40px] w-full items-center justify-center rounded-[8px] bg-primary px-[24px] py-[10px] text-[14px] font-bold leading-[20px] text-white transition-opacity hover:opacity-90">${product.buttonLabel}</button>
       </article>
@@ -66,6 +63,18 @@ const AvantiCarousel = (() => {
     wrapper.innerHTML = variants
       .map((variant) => buildSlideHtml(config.product, variant))
       .join('');
+
+    // A tag de desconto (10% OFF) tem o mesmo visual em mobile e desktop, mas
+    // só é um link navegável no desktop. No mobile mantemos apenas a aparência
+    // (badge teal) e neutralizamos o clique — não navega nem abre nova aba.
+    // Delegação porque os slides são recriados via innerHTML.
+    wrapper.addEventListener('click', (event) => {
+      const link = event.target.closest('[data-discount-link]');
+      if (!link) return;
+      if (!window.matchMedia('(min-width: 1024px)').matches) {
+        event.preventDefault();
+      }
+    });
   };
 
   /**
