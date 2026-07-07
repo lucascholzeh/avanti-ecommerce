@@ -27,8 +27,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['"Nunito Sans"', ...defaultTheme.fontFamily.sans],
-        nunito: ['Nunito', ...defaultTheme.fontFamily.sans],
-        heebo: ['Heebo', ...defaultTheme.fontFamily.sans]
+        nunito: ['Nunito', ...defaultTheme.fontFamily.sans]
       },
       boxShadow: {
         header: '0 4px 2px rgba(0, 0, 0, 0.25)',
