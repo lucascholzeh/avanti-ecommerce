@@ -1,15 +1,16 @@
 # Avanti E-commerce
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
-![Swiper](https://img.shields.io/badge/Swiper-6332F6?logo=swiper&logoColor=white)
-
 Landing page de e-commerce desenvolvida como desafio técnico de front-end para o **Innovation Class**.
 
 Reprodução fiel do layout do Figma em **HTML, CSS e JavaScript vanilla**, com busca funcional, mega menu, carrosséis interativos e layout responsivo (desktop e mobile).
 
-## Stack
+## Tecnologias utilizadas
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Swiper](https://img.shields.io/badge/Swiper-6332F6?logo=swiper&logoColor=white)
+![Google Fonts](https://img.shields.io/badge/Google_Fonts-4285F4?logo=google-fonts&logoColor=white)
 
 - **HTML5** semântico
 - **Tailwind CSS** — build via CLI, com os tokens do design (cores, tipografia, sombras) em [`tailwind.config.js`](tailwind.config.js)
